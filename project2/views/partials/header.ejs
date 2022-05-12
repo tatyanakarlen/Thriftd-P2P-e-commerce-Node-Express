@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatyana's Pre-Loved Clothing Store</title>
+    <link rel='stylesheet' href='/stylesheets/home-page-style.css' />
+</head>
+
+<body>
+    <div class="page">
+        <header id="header">
+            <div class="shipping-banner">
+                <div id="left-side-top">
+                    <p>Free shipping on purchases of $75 or more!*</p>
+                </div>
+                <div id="right-side-top">
+                    <span id="free-returns">
+                        <b>Explore, Sell, Buy</b>
+                        Collectible Items
+                    </span>
+                </div>
+            </div>
+            <div class="menu-top-section">
+                <div class="menu-left">
+                    <ul class="UL-left">
+                        <li>About</li>
+                        <li>Careers</li>
+                        <li>Gift Card</li>
+                        <li>Blog</li>
+                    </ul>
+                </div>
+                
+                <div class="menu-right">
+                    <ul class="UL-right">
+                            <% if (user) { %>
+                            <li><a href="/logout">Logout</a></li>
+                            <li><a href="/products/new">Post Item</a></li>
+                            <li><a href="/users/<%= user._id %>/myItems">My Items</a></li>
+                    
+                            
+                            <% } else { %>
+                            <li><a href="/auth/google">Login</a></li>
+                            <li><a href="/auth/google">Sign Up</a></li>
+                             <% } %>
+                        </li>
+                            
+                       
+                    </ul>
+                </div>
+            </div>
+            <div class="center-logo">
+                <h1 id="LOGO">STORE</h1>
+                <span id="slogan">Some kind of slogan</span>
+            </div>
+        
+        </header>

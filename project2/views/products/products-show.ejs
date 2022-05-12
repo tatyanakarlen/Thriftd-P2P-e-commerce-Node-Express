@@ -1,0 +1,23 @@
+<%-include('../partials/header') %>
+
+<section class="main">
+    <div class="main-divs" id="left-side-img">
+        <img src='../images/mirror-lipstick.jpg' width="400px" height="500px" />
+    </div>
+    <div class="main-divs" id="right-side-content">
+        <ul>
+            <li><%=item.description %></li>
+            <li>Category: <%=item.category %></li>
+            <li>Size: <%=item.size %></li>
+            <li>Price: $<%=item.price %></li>
+            <li>Brand: <%=item.brand %></li>
+            <li>Color: <%=item.color %></li>
+            <li>Shipping: $<%=item.shipping %></li>
+        </ul>
+    </div>
+</section>
+
+<%-include('../partials/footer') %>
+
+
+

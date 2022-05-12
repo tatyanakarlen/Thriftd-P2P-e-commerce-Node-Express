@@ -1,0 +1,159 @@
+html {
+    height: 100%; 
+  }
+  
+  body {
+    height: 100%; 
+    /* padding: 27px;  */
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  
+  a {
+    color: #00B7FF;
+  }
+  
+  #header {
+    display: flex; 
+    flex-direction: column;
+  }
+  
+  .shipping-banner {
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* position: absolute;  */
+    width: 100%; 
+    top: 0; 
+    height:35px; 
+    background-color: black; 
+    color: white; 
+    text-transform: uppercase;
+    font-size: 14px; 
+    letter-spacing: .5px; 
+    text-align: center; 
+  }
+  
+  #free-returns {
+    /* display: relative;  */
+    /* z-index: 1;  */
+    color: white; 
+    margin-left: 6rem; 
+  }
+  
+  .page {
+    height: 100vh; 
+    /* background-color: rgb(241, 168, 217); */
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    background-color: white;
+  }
+  
+  .menu-top-section {
+    height: 40px; 
+    background-color: white;
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+    color: #504F4f;
+    font-size: 13px;
+    
+  }
+  
+  .UL-left li {
+    list-style-type: none;
+    display: inline;
+    padding-left: 2em; 
+  }
+  
+  .UL-right li {
+    list-style-type: none;
+    display: inline; 
+    padding-right: 2em; 
+  }
+  
+  
+  .menu-left {
+    height: 50px; 
+    width: 400px; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+  }
+  
+  .menu-right {
+    height: 50px; 
+    width: 400px; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  } 
+  
+  .center-logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.25rem;
+  }
+  
+  /* #logo {
+    
+  } */
+  
+  #slogan {
+    padding-left: 1rem; 
+  }
+  
+  .main-menu {
+    display: flex; 
+    justify-content: center; 
+    margin-bottom: -1rem; 
+  }
+  
+  .main-menu a {
+    padding-left: 6em;
+  }
+  
+  .btns {
+    border: none; 
+    background-color: white;
+    cursor: pointer; 
+    font-size: 17px;
+  }
+  
+  
+  
+  .main {
+    width: 100%; 
+    background-color: #cae4e9; 
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem; 
+    margin-top: 1.5rem; 
+    height: 100vh; 
+  }
+  
+  .main-divs {
+    height: 500px; 
+    width: 500px; 
+    background-color: red;
+  }
+  
+  #left-side-content {
+    background-color: #cae4e9; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    height: 400px; 
+    width: 400px; 
+  }
+  
+  #right-side-img {
+    margin-top: 2rem; 
+  }

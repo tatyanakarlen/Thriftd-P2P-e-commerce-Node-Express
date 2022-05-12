@@ -1,0 +1,11 @@
+.container {
+    display: flex; 
+    margin: auto; 
+    width: 500px;
+    clear: both;
+  }
+  
+  .container input {
+    width: 100%;
+    clear: both;
+  }

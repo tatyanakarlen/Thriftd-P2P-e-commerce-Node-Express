@@ -1,0 +1,50 @@
+<%-include('../partials/header') %>
+
+    <div class="main-menu">
+        <a href="/product1"><button class="btns">Jewlery</button></a>
+        <a href="/product2"><button class="btns">Hats</button></a>
+        <a href="/product3"><button class="btns">Coats</button></a>
+        <a href="/product4"><button class="btns">Shoes</button></a>
+        <a href="/product5"><button class="btns">Bags</button></a>
+    </div>
+    <section class="main">
+        <div class="main-divs" id="left-side-content">
+            <h1>YOU DESERVE THE BEST STORE</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi sapiente officia dolor sit amet
+                consectetur adipisicing elit. Modi sapiente officia</p>
+        </div>
+        <div class="main-divs" id="right-side-img">
+            <img src='images/mirror-lipstick.jpg' width="500px" height="500px" />
+        </div>
+    </section>
+    
+    <section>
+                    <% for (let i = 0; i < items.length; i++) { %>
+                        <div>
+                            <img src='images/mirror-lipstick.jpg' width="30px" height="50px" />
+                            <%= items[i].color %>
+                            <%= items[i].price %>
+                            <a href="/products/<%= items[i].id %>">DETAILS</a>
+                        </div>
+                        <% } %>
+                
+    
+
+
+
+
+
+    </section>
+
+    
+    
+    
+
+
+
+
+
+
+    <%-include('../partials/footer') %>
+
+        </html>

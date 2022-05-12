@@ -1,0 +1,66 @@
+<%-include('../partials/header') %>
+
+<link rel='stylesheet' href='/stylesheets/new-post-style.css' />
+
+<!-- description: String,
+  category: String,
+  size: String, 
+  price: Number, 
+  brand: String, 
+  color: String,
+condition: String  -->
+
+  <h2>LIST NEW ITEM</h2>
+<div class="container">
+    <form action="/products" method="POST">
+        <label>Item Description:<br>
+            <input type="text" required name="description" placeholder="Tell us about your item. Be descriptive as possible without repeating yourself.">
+        </label></br>
+        <br>
+        <label>Category:<br>
+            <select name="category">
+                <option value="Clothing">Clothing</option>
+                <option value="Accesories">Accesories</option>
+                <br>
+            </select></br>
+        </label></br>
+        <label>Size:
+            <select name="size">
+                <option value="NA">N/A</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select><br>
+        </label></br>
+        <label>Price:
+            <br><input type="text" required name="price" placeholder="Enter number">
+        </label><br>
+        <label>Brand:
+            <input type="text" name="brand">
+        </label></br>
+        <label>Color:
+            <input type="text" name="color">
+        </label></br>
+        <label>Condition:
+            <select name="condition">
+                <option value="true vintage, VG">true vintage-VG</option>
+                <option value="deadstock, LIKE NEW">deadstock-LIKE NEW</option>
+                <option value="collectible-needs love">collectible-NEEDS LOVE</option>
+                <option value="modern pre-loved, VG">modern pre-loved-VG+</option>
+                <option value="modern pre-loved, LIKE NEW">modern pre-loved-LIKE NEW</option>
+            </select><br>
+            <label>Shipping:
+                <br><input type="text" name="shipping" placeholder="Enter number">
+            </label><br>
+            <input type="submit" value="List Item">
+    </form>
+</div>
+
+
+
+
+
+<%-include('../partials/footer') %>
+

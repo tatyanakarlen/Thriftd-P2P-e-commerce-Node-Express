@@ -1,0 +1,44 @@
+testing testing
+
+WELCOME TO YOUR PROFILE PAGE
+
+<p>Name:<%= user.name %>
+</p>
+<p>e-mail:<%= user.email %>
+</p>
+<p> Joined: <% user.createdAt.toISOString().slice(0, 10) %>
+</p>
+
+<h1>Your posted items:</h1>
+
+
+<% if (items.length === 0) { %>
+    <h2>You currently do not have posted items</h2>
+<% } %>
+
+
+
+<% for (let i=0; i < items.length; i++) { %>
+        <div> <img src='/public/images/mirror-lipstick.jpg' width="30px" height="50px" />
+            <%= items[i].color %>
+                <%= items[i].price %>
+                    <a href="/products/<%= items[i].id %>">DETAILS</a>
+                </div>
+        <% } %>
+        
+
+
+    
+               
+
+
+       
+
+       
+                    
+
+
+
+
+            
+            
