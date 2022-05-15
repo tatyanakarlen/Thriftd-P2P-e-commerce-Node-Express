@@ -101,9 +101,11 @@ html {
     margin-top: 0.25rem;
   }
   
-  /* #logo {
-    
-  } */
+ #LOGO {
+     font-size: 25px;
+     color: black; 
+     text-decoration: none;
+ }
   
   #slogan {
     padding-left: 1rem; 

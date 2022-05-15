@@ -1,12 +1,12 @@
-testing testing
+<%-include('../partials/header') %>
 
 WELCOME TO YOUR PROFILE PAGE
 
-<p>Name:<%= user.name %>
+<p>User:<%= user.name.replace(/\s+/g, '') %>
 </p>
 <p>e-mail:<%= user.email %>
 </p>
-<p> Joined: <% user.createdAt.toISOString().slice(0, 10) %>
+<p> Joined: <% user.createdAt.toLocaleDateString() %>
 </p>
 
 <h1>Your posted items:</h1>
@@ -25,6 +25,8 @@ WELCOME TO YOUR PROFILE PAGE
                     <a href="/products/<%= items[i].id %>">DETAILS</a>
                 </div>
         <% } %>
+
+        <%-include('../partials/footer') %>
         
 
 

@@ -1,6 +1,18 @@
 const { Schema } = require('mongoose');
 var mongoose = require('mongoose');
 
+
+
+const commentSchema = new Schema({
+    content: String, 
+    userName: String,
+  }, 
+  {
+    timestamps: true
+  });
+
+
+
 const itemSchema = new mongoose.Schema({
   description: {
       type: String,
@@ -40,15 +52,20 @@ const itemSchema = new mongoose.Schema({
   shipping: {
       type: Number, 
       min: 0, 
-      max: 50
+      max: 50,
+      required: true
   },
-  postedBy: {
+  userName: String,
+  image: [],
+  postedById: {
       type: Schema.Types.ObjectId, 
       ref: 'User'
-  }
-
+  }, 
+  comments: [commentSchema]
 }, {
   timestamps: true
 });
+
+//image: []
 
 module.exports = mongoose.model('Item', itemSchema);

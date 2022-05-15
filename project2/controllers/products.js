@@ -5,9 +5,10 @@ module.exports = {
   index,
   newItem,
   create, 
-  show
-  // addFact,
-  // delFact
+  show, 
+  edit, 
+  update, 
+  deleteItem
 };
 
 
@@ -30,12 +31,13 @@ module.exports = {
 async function show(req, res) {
   let user = await User.findById(req.user)
   let item = await Item.findById(req.params.id)
+//   await item.execPopulate('postedBy')
   res.render('products/products-show.ejs', {
     user, item
   })
 }
 
-
+// new items functions 
 // renders new item form/page
 async function newItem(req,res) {
   let user = await User.findById(req.user)
@@ -45,22 +47,10 @@ async function newItem(req,res) {
 }
 
 
-// async function show(req,res, next) {
-//   let flight = await FlightsModel.findById(req.params.id)
-//           res.render('flights-info.ejs', {
-//               flight
-//           })
-//        }
-
-
-
 //  creates new item 
 
 async function create(req,res) {
   console.log(req.body)
-let userId = await User.findById(req.user)
-// let item = await Item.findById(req.params.id)
-
   let obj = {
       description: req.body.description, 
       category: req.body.category, 
@@ -70,12 +60,68 @@ let userId = await User.findById(req.user)
       condition: req.body.condition, 
       color: req.body.color, 
       shipping: req.body.shipping, 
-      postedBy: userId
+      postedById: req.user.id,
+      userName: req.user.name, 
+      image: req.body.image
+
+    //   req.body.userName = req.user.name
+
+    // images: req.body.image
 }
-//  let newItem = await Item
-  await Item.create(obj)
-  res.send('hi hi hi')
+  let item = await Item.create(obj)
+  res.render('products/new-item-post.ejs', {
+      item, user: req.user
+  })
 }
+
+
+// {/* <input type="file" name="image">
+/* <input type="submit" name="submit" value="Upload"> *
+        /* </label></br> */
+
+
+
+
+// update functions 
+// renders edit post page with form
+async function edit(req,res) {
+    let user = await User.findById(req.user)
+    let item = await Item.findById(req.params.id)
+    res.render('products/edit-post.ejs', {
+        user, item
+    })
+}
+
+// updates item
+
+async function update(req,res) {
+let item = await Item.findByIdAndUpdate(req.params.id, req.body)
+res.redirect('/products/' + req.params.id)
+}
+
+
+// delete item 
+
+async function deleteItem (req,res) {
+    let item = await Item.deleteOne({_id: req.params.id})
+    res.redirect('/users/' + req.user.id + '/myItems')
+}
+
+// remove().exec();
+
+// Model.remove({ _id: req.body.id }
+
+
+// function deleteUser(req,res) {
+//     let userIdFromWildcard = req.params.id;
+//     UserModel.deleteUserFromId(userIdFromWildcard);
+//     // remove the item from the database
+//     res.redirect('/users')
+// }
+
+
+
+
 
 
 

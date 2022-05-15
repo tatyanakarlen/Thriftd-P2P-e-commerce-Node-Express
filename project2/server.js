@@ -2,6 +2,10 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+
+// for post and put requests 
+let methodOverride = require('method-override');
+
 // requiring express session middleware
 var session = require('express-session')
 var passport = require('passport')
@@ -22,6 +26,7 @@ require('./config/passport') //run the passport code
 var indexRoutes = require('./routes/index');
 var productsRoutes = require('./routes/products');
 var userRoutes = require('./routes/users')
+var commentRoutes = require('./routes/comments')
 
 
 // const res = require('express/lib/response')
@@ -34,6 +39,10 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
+
+// method override
+app.use(methodOverride('_method'))
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -54,6 +63,7 @@ app.use(passport.session())
 app.use('/', indexRoutes);
 app.use('/products', productsRoutes)
 app.use('/users', userRoutes)
+app.use('/', commentRoutes);
 
 
 

@@ -1,23 +1,60 @@
 <%-include('../partials/header') %>
 
-<section class="main">
-    <div class="main-divs" id="left-side-img">
-        <img src='../images/mirror-lipstick.jpg' width="400px" height="500px" />
+    <section class="main">
+        <div class="main-divs" id="left-side-img">
+            <img src='../images/mirror-lipstick.jpg' width="400px" height="500px" />
+            
     </div>
-    <div class="main-divs" id="right-side-content">
-        <ul>
-            <li><%=item.description %></li>
-            <li>Category: <%=item.category %></li>
-            <li>Size: <%=item.size %></li>
-            <li>Price: $<%=item.price %></li>
-            <li>Brand: <%=item.brand %></li>
-            <li>Color: <%=item.color %></li>
-            <li>Shipping: $<%=item.shipping %></li>
-        </ul>
-    </div>
-</section>
+        <div class="main-divs" id="right-side-content">
+            <ul>
+                <li>Posted By: <%=item.userName.replace(/\s+/g, '') %>
+                </li>
+                <li>
+                    <%=item.description %>
+                </li>
+                <li>Category: <%=item.category %>
+                </li>
+                <li>Size: <%=item.size %>
+                </li>
+                <li>Price: $<%=item.price %>
+                </li>
+                <li>Brand: <%=item.brand %>
+                </li>
+                <li>Color: <%=item.color %>
+                </li>
+                <li>Shipping: $<%=item.shipping %>
+                </li>
+            </ul>
+            <% if (item.userName==user.name) { %>
+                <a href="/products/<%= item.id%>/edit">UPDATE</a>
+                <form action="/products/<%= item.id %>?_method=DELETE" method="POST">
+                    <button>DELETE</button>
+                </form>
+                    <% } else { %>
+                        <button>BUY</button>
+                        <% } %>
 
-<%-include('../partials/footer') %>
+                        <h2>Comments</h2>
+                            <form id="add-comment-form" method="POST" action="/products/<%= item.id %>/comments">
+                                <textarea name="content"></textarea><br>
+                                <input type="submit" value="Add Comment">
+                            </form>
+                            <% if (item.comments.length > 0) { %> 
+                              <%  item.comments.forEach(function(c) { %>
+                                <h4><%= c.userName.replace(/\s+/g, '') %> <%= c.content %></h4>
+                                    
+                               <% }) %>
+                            <% } %>
+                           
+ 
+                     </div>
+    </section>
 
 
 
+   
+
+
+
+
+    <%-include('../partials/footer') %>
