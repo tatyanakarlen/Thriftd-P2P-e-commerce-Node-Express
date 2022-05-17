@@ -1,5 +1,7 @@
 const User = require('../models/user');
 const Item = require('../models/item');
+const request = require('request');
+const fs = require('fs');
 
 module.exports = {
   index,
@@ -30,10 +32,11 @@ module.exports = {
 
 async function show(req, res) {
   let user = await User.findById(req.user)
+  let items = await Item.find()
   let item = await Item.findById(req.params.id)
 //   await item.execPopulate('postedBy')
   res.render('products/products-show.ejs', {
-    user, item
+    user, item, items
   })
 }
 
@@ -47,11 +50,33 @@ async function newItem(req,res) {
 }
 
 
-//  creates new item 
+// upload function 
+function base64_encode(image) {
+    // read binary data
+    var bitmap = fs.readFileSync(image);
+    // convert binary data to base64 encoded string
+    return bitmap.toString('base64');
+  }
 
-async function create(req,res) {
-  console.log(req.body)
-  let obj = {
+  async function create(req,res) {
+    let image = base64_encode(req.file.path);
+  
+    const options = {
+      method: 'POST',
+      url: 'https://api.imgur.com/3/image',
+      headers: {
+        Authorization: `Client-ID ${process.env.CLIENT_ID}`,
+      },
+      formData: {
+        image: image,
+        type: 'base64'
+      },
+    };
+    
+    request(options, async function(err, response) {
+      if (err) return console.log(err);
+      let body = JSON.parse(response.body)
+      let obj = {
       description: req.body.description, 
       category: req.body.category, 
       size: req.body.size, 
@@ -62,22 +87,50 @@ async function create(req,res) {
       shipping: req.body.shipping, 
       postedById: req.user.id,
       userName: req.user.name, 
-      image: req.body.image
+      image: body.data.link
 
-    //   req.body.userName = req.user.name
-
-    // images: req.body.image
-}
-  let item = await Item.create(obj)
+    }
+      // Mongoose query here to save to db
+      // body.data.link points to imgur url
+      console.log(obj)
+      let item = await Item.create(obj)
   res.render('products/new-item-post.ejs', {
       item, user: req.user
   })
-}
+  })
+  }
+
+//  creates new item 
+
+// async function create(req,res) {
+// const imageLink = upload(req)
+//   let obj = {
+//       description: req.body.description, 
+//       category: req.body.category, 
+//       size: req.body.size, 
+//       price: req.body.price, 
+//       brand: req.body.brand, 
+//       condition: req.body.condition, 
+//       color: req.body.color, 
+//       shipping: req.body.shipping, 
+//       postedById: req.user.id,
+//       userName: req.user.name, 
+//       image: imageLink
+
+//     //   req.body.userName = req.user.name
+
+//     // images: req.body.image
+// }
+//   let item = await Item.create(obj)
+//   res.render('products/new-item-post.ejs', {
+//       item, user: req.user
+//   })
+// console.log(obj)
+// console.log(imageLink)
+// }
 
 
-// {/* <input type="file" name="image">
-/* <input type="submit" name="submit" value="Upload"> *
-        /* </label></br> */
+
 
 
 

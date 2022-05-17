@@ -56,7 +56,7 @@ const itemSchema = new mongoose.Schema({
       required: true
   },
   userName: String,
-  image: [],
+  image: String,
   postedById: {
       type: Schema.Types.ObjectId, 
       ref: 'User'

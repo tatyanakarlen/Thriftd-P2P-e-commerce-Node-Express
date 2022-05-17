@@ -15,31 +15,9 @@ html {
   #header {
     display: flex; 
     flex-direction: column;
+    margin-top: 1rem; 
   }
   
-  .shipping-banner {
-    display: flex; 
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    /* position: absolute;  */
-    width: 100%; 
-    top: 0; 
-    height:35px; 
-    background-color: black; 
-    color: white; 
-    text-transform: uppercase;
-    font-size: 14px; 
-    letter-spacing: .5px; 
-    text-align: center; 
-  }
-  
-  #free-returns {
-    /* display: relative;  */
-    /* z-index: 1;  */
-    color: white; 
-    margin-left: 6rem; 
-  }
   
   .page {
     height: 100vh; 
@@ -61,6 +39,11 @@ html {
     color: #504F4f;
     font-size: 13px;
     
+  }
+
+  .UL-left {
+      margin-left: -4rem; 
+      margin-top: 1rem; 
   }
   
   .UL-left li {
@@ -93,23 +76,18 @@ html {
     align-items: center;
   } 
   
-  .center-logo {
+  /* .center-logo {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-top: 0.25rem;
-  }
+  } */
   
- #LOGO {
-     font-size: 25px;
-     color: black; 
-     text-decoration: none;
- }
   
-  #slogan {
+  /* #slogan {
     padding-left: 1rem; 
-  }
+  } */
   
   .main-menu {
     display: flex; 
@@ -132,30 +110,79 @@ html {
   
   .main {
     width: 100%; 
-    background-color: #cae4e9; 
+    background-color: #eaedee; 
     display: flex; 
     flex-direction: row;
     justify-content: center;
-    gap: 2rem; 
     margin-top: 1.5rem; 
-    height: 100vh; 
+    min-height: 100px;
+    overflow: hidden;
   }
   
   .main-divs {
-    height: 500px; 
-    width: 500px; 
+    height: 425px; 
+    width: 325px; 
     background-color: red;
   }
   
   #left-side-content {
-    background-color: #cae4e9; 
+    background-color: #eaedee; 
     display: flex; 
     flex-direction: column;
     justify-content: center;
     height: 400px; 
-    width: 400px; 
+    width: 350px; 
+    margin-right: 2rem; 
   }
   
-  #right-side-img {
+  /* #right-side-img1 {
     margin-top: 2rem; 
   }
+
+  #right-side-img2 {
+    margin-top: 2rem; 
+  } */
+
+  #product-container {
+      display: flex; 
+      flex-direction: row;
+      justify-content: center;
+      min-width: 100px;
+      min-height: 100px; 
+      overflow: hidden;
+      gap: 1rem; 
+      margin-top: 1rem; 
+      flex-wrap: wrap;
+
+  }
+
+  .product-boxes {
+    display: flex; 
+    flex-direction: column; 
+    height: 250px; 
+    width: 250px;
+}
+
+  /* .thrifted {
+      margin-left: 3rem; 
+      margin-top: 1rem; 
+      background-color: red;
+      height: 50px; 
+      width: 300px; 
+  } */
+
+  #LOGO {
+    font-size: 25px;
+    color: black; 
+    text-decoration: none;
+    margin-left: 1rem; 
+    margin-top: -1rem; 
+    font-size: 30px;
+    /* font should be targeted here */
+}
+
+#H1-LOGO {
+    margin-top: 0.5rem; 
+    font-size: 20px; 
+    /* movement should be targeted here */
+}

@@ -12,7 +12,7 @@ condition: String  -->
 
   <h2>LIST NEW ITEM</h2>
 <div class="container">
-    <form action="/products" method="POST">
+    <form action="/products" method="POST" enctype="multipart/form-data">
         <label>Item Description:<br>
             <textarea name="description" required placeholder="Tell us about your item. Be descriptive as possible without repeating yourself."></textarea>
         </label></br>
@@ -55,10 +55,8 @@ condition: String  -->
                 <br><input type="text" name="shipping" required placeholder="Enter number">
             </label><br>
             <label>Upload Images:
-                <form action="/products/upload" method="POST" enctype="multipart/form-data">
                     <input type="file" name='image'>
                     <input type="submit">
-                  </form>
     </form>
 </div>
 

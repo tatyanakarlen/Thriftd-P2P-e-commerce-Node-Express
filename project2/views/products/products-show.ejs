@@ -2,7 +2,7 @@
 
     <section class="main">
         <div class="main-divs" id="left-side-img">
-            <img src='../images/mirror-lipstick.jpg' width="400px" height="500px" />
+            <img src=<%= item.image %> width="400px" height="500px"/>
             
     </div>
         <div class="main-divs" id="right-side-content">
@@ -25,6 +25,7 @@
                 <li>Shipping: $<%=item.shipping %>
                 </li>
             </ul>
+            <% if (user) { %>
             <% if (item.userName==user.name) { %>
                 <a href="/products/<%= item.id%>/edit">UPDATE</a>
                 <form action="/products/<%= item.id %>?_method=DELETE" method="POST">
@@ -33,22 +34,53 @@
                     <% } else { %>
                         <button>BUY</button>
                         <% } %>
-
                         <h2>Comments</h2>
-                            <form id="add-comment-form" method="POST" action="/products/<%= item.id %>/comments">
-                                <textarea name="content"></textarea><br>
-                                <input type="submit" value="Add Comment">
-                            </form>
+                        <form id="add-comment-form" method="POST" action="/products/<%= item.id %>/comments">
+                            <textarea name="content"></textarea><br>
+                            <input type="submit" value="Add Comment">
+                        </form>
+                        <% if (item.comments.length > 0) { %> 
+                          <%  item.comments.forEach(function(c) { %>
+                            <h4><%= c.userName.replace(/\s+/g, '') %> <%= c.content %></h4>
+                                
+                           <% }) %>
+                        <% } %>
+                        <% } else { %>
+                            <button>BUY</button>
+                            <h3>Comments</h3>
+                            <h5>Log in to leave a comment</h5>
                             <% if (item.comments.length > 0) { %> 
-                              <%  item.comments.forEach(function(c) { %>
-                                <h4><%= c.userName.replace(/\s+/g, '') %> <%= c.content %></h4>
-                                    
-                               <% }) %>
-                            <% } %>
-                           
- 
-                     </div>
-    </section>
+                                <%  item.comments.forEach(function(c) { %>
+                                  <h4><%= c.userName.replace(/\s+/g, '') %> <%= c.content %></h4>
+                                      
+                                 <% }) %>
+                        <% } %>
+                        <% } %>
+
+                       
+                    </div>
+                </section>
+
+
+
+
+                  
+                       
+
+
+    <section>
+        <% for (let i = 0; i < items.length; i++) { %>
+            <div>
+                <img src='images/mirror-lipstick.jpg' width="30px" height="50px" />
+                <%= items[i].color %>
+                <%= items[i].price %>
+                <a href="/products/<%= items[i].id %>">DETAILS</a>
+            </div>
+            <% } %>
+    
+</section>
+
+
 
 
 
