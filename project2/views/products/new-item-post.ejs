@@ -3,7 +3,7 @@
 
 <section class="main">
     <div class="main-divs" id="left-side-img">
-        <img src='../images/mirror-lipstick.jpg' width="400px" height="500px" />
+        <img src="<%= item.image %>" width="400px" height="500px"/>
     </div>
     <div class="main-divs" id="right-side-content">
         <h1>Your item is now posted</h1>
@@ -21,13 +21,32 @@
          <form action="/products/<%= item.id %>?_method=DELETE"
              method="POST">
              <button>DELETE</button>
+            </form>
+             <div id="comment-section">
+                        <h3>Comments</h3>
+                        <form id="add-comment-form" method="POST" action="/products/<%= item.id %>/comments">
+                            <textarea name="content"></textarea><br>
+                            <input type="submit" value="Add Comment">
+                        </form>
+                        <% if (item.comments.length > 0) { %> 
+                          <%  item.comments.forEach(function(c) { %>
+                        <p><strong><%= c.userName.replace(/\s+/g, '') %></strong> <%= c.content %></p>
+                            
+                    
+                                
+                           <% }) %>
+                        <% } %>
+                    </div>
+
+        
+          
             </div>
         </section>
         
         
         
-        </form>
-    </form>
+        
+    
 
 
     <%-include('../partials/footer') %>

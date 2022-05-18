@@ -77,6 +77,7 @@ function base64_encode(image) {
       if (err) return console.log(err);
       let body = JSON.parse(response.body)
       let obj = {
+      title: req.body.title, 
       description: req.body.description, 
       category: req.body.category, 
       size: req.body.size, 
@@ -94,10 +95,13 @@ function base64_encode(image) {
       // body.data.link points to imgur url
       console.log(obj)
       let item = await Item.create(obj)
-  res.render('products/new-item-post.ejs', {
-      item, user: req.user
-  })
-  })
+      let items = await Item.find()
+  res.render('products/products-show.ejs', {
+      item, user: req.user, items
+  }) 
+
+  }) 
+ 
   }
 
 //  creates new item 

@@ -13,28 +13,31 @@
     <div class="page">
         <header id="header">
             <div class="menu-top-section">
-                    <div class="thriftd">
-                        <h1 id="H1-LOGO"><a id="LOGO" href="/products">thriftd</a></h1>
-                    </div>
+                <div class="thriftd">
+                    <h1 id="H1-LOGO"><a id="LOGO" href="/products">thriftd</a></h1>
+                </div>
+                    <div id="UL-left-side">
                     <ul class="UL-left">
                         <li><strong>About</strong></li>
                         <li><strong>Clothing</strong></li>
                         <li><strong>Accesories</strong></li>
                     </ul>
+                </div>
+        
         
                 
                 
                 <div class="menu-right">
                     <ul class="UL-right">
                             <% if (user) { %>
-                            <li><strong><a href="/logout">Logout</a></strong></li>
+                            <li><button class="login-out-btn"><strong><a class="login-out-link" href="/logout">Logout</a></strong></button></li>
                             <li><strong><a href="/products/new">Post Item</a></strong></li>
                             <li><strong><a href="/users/<%= user._id %>/myItems">My Items</a></strong></li>
                     
                             
                             <% } else { %>
-                            <li><a href="/auth/google">Login</a></li>
-                            <li><a href="/auth/google">Sign Up</a></li>
+                            <li><button class="login-out"><strong><a href="/auth/google">Login</a></strong></button></li>
+                            <li><strong><a href="/auth/google">Sign Up</a></strong></li>
                              <% } %>
                         </li>
                             

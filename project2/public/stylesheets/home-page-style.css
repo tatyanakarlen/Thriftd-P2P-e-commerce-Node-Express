@@ -5,7 +5,8 @@ html {
   body {
     height: 100%; 
     /* padding: 27px;  */
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 14px; 
+    font-family: Arial;
   }
   
   a {
@@ -38,7 +39,7 @@ html {
     display: flex; 
     flex-direction: row; 
     justify-content: space-between; 
-    color: black;
+    /* color: black; */
     font-size: 13px;
     
   }
@@ -89,13 +90,17 @@ html {
   .main-menu a {
     padding-left: 6em;
   }
+
+  #UL-left-side {
+    margin-left: 7rem; 
+  }
   
-  .btns {
+  /* .btns {
     border: none; 
     background-color: white;
     cursor: pointer; 
     font-size: 17px;
-  }
+  } */
   
   
   
@@ -108,22 +113,30 @@ html {
     margin-top: 1.5rem; 
     min-height: 100px;
     overflow: hidden;
+    
   }
   
   .main-divs {
     height: 425px; 
     width: 325px; 
-    background-color: red;
+    background-color: #eaedee; 
+    /* margin-left: 2rem; */
   }
 
   #right-side-img1 {
-      margin-left: 2rem; 
+      margin-left: 4rem; 
   }
 
   #right-side-img2 {
-    margin-right: -8rem; 
+    margin-right: -1rem; 
 
   }
+
+  /* #right-side-content-new-post-ejs {
+      min-height: 100px;
+      overflow: hidden;
+      background-color: #eaedee; 
+  } */
 
 
   
@@ -133,17 +146,13 @@ html {
     flex-direction: column;
     justify-content: center;
     height: 400px; 
-    width: 350px; 
-    margin-right: 2rem; 
-  }
-  
-  /* #right-side-img1 {
-    margin-top: 2rem; 
+    width: 375px; 
+    margin-left: -4rem;  
   }
 
-  #right-side-img2 {
-    margin-top: 2rem; 
-  } */
+ 
+
+  
 
   .product-container {
       display: flex; 
@@ -155,7 +164,9 @@ html {
       gap: 1rem; 
       margin-top: 1rem; 
       flex-wrap: wrap;
-}
+      margin-left: -1.25rem; 
+  }
+  
 
 .product-container > div {
     padding-bottom: 1rem; 
@@ -172,19 +183,19 @@ html {
  
 
   #LOGO {
-    font-size: 25px;
+    font-size: 35px; 
     color: black; 
     text-decoration: none;
     margin-left: 1rem; 
     margin-top: -1rem; 
-    font-size: 30px;
+    font-size: 35px;
     /* font should be targeted here */
 }
 
 #H1-LOGO {
     margin-top: 0.5rem; 
-    margin-left: 1.5rem; 
-    font-size: 20px; 
+    margin-left: 2.5rem; 
+    font-size: 30px; 
     /* movement should be targeted here */
 }
 
@@ -259,6 +270,26 @@ html {
 
 #button {
     margin-top: 2rem;
+}
+
+.login-out-btn {
+    background-color: red;
+    border: none; 
+    height: 30px; 
+    width: 80px; 
+    border-radius: 18px;
+}
+
+.login-out-link {
+    color: white; 
+}
+
+#shop-now {
+    background-color: black;
+    color: white;
+    height: 45px; 
+    width: 100px; 
+    border: none; 
 }
 
 .new-post-form-container {

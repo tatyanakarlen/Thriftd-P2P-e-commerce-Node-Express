@@ -5,6 +5,9 @@
 <h2 class="NEW-POST-H2">Edit Item Post</h2>
 <div class="new-post-form-container">
 <form class="form" action="/products/<%= item.id %>/?_method=PUT" method="POST">
+    <label><strong>Title:</strong><br>
+        <textarea type="text" name="title" placeholder="<%= item.title %>" value="<%= item.title %>"></textarea>
+    </label>
     <label><strong>Item Description:</strong><br>
         <textarea class="item-description" type="text" name="description" placeholder="<%= item.description %>" value="<%= item.description %>"></textarea>
     </label>

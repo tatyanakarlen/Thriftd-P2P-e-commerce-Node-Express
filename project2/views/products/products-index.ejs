@@ -2,18 +2,21 @@
 
     
     <section class="main">
+        <div id="left-side-text">
+    
         <div class="main-divs" id="left-side-content">
-            <h3>Shop your style on thriftd</h3>
             <h1>WHATEVER YOU STYLE IS, FIND IT ALL HERE</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi sapiente officia dolor sit amet
-                consectetur adipisicing elit. Modi sapiente officia</p>
-                <button id="shop-now">SHOP NOW</button>
+                consectetur adipisicing elit. Modi sapiente officiajghjghghfgchfcgfgffgf</p>
+                <button id="shop-now"><strong>Shop Now</strong></button>
         </div>
+    
+    </div>
         <div class="main-divs" id="right-side-img1">
-            <img src='images/color-background.jpg' width="325px" height="425px" />
+            <img src='images/color-background.jpg' width="340px" height="425px" />
         </div>
         <div class="main-divs" id="right-side-img2">
-            <img src='images/glasses.jpg' width="325px" height="425px" />
+            <img src='images/glasses.jpg' width="340px" height="425px" />
         </div>
     </section>
     <div id="text-area">
@@ -25,8 +28,8 @@
                     <% for (let i = 0; i < items.length; i++) { %>
                         <div class="product-boxes">
                              <a href="/products/<%= items[i].id %>"><img src="<%= items[i].image %>"width="225px" height="250px"/></a>
-                            <%= items[i].color %>
-                            <%= items[i].price %>
+                            <%= items[i].title %>
+                            $<%= items[i].price %>
                     
                         </div>
                         <% } %>

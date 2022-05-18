@@ -10,6 +10,8 @@
                 <li>Posted By: <%=item.userName.replace(/\s+/g, '') %>
                 </li>
                 <li>
+                    <%=item.title %>
+                <li>
                     <%=item.description %>
                 </li>
                 <li>Category: <%=item.category %>
@@ -85,8 +87,8 @@
                         <% for (let i = 0; i < items.length; i++) { %>
                             <div class="product-boxes">
                                  <a href="/products/<%= items[i].id %>"><img src="<%= items[i].image %>"width="225px" height="250px"/></a>
-                                <%= items[i].color %>
-                                <%= items[i].price %>
+                                <%= items[i].title %>
+                                $<%= items[i].price %>
                         
                             </div>
                             <% } %>
