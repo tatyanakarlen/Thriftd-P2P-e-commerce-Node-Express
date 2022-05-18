@@ -17,14 +17,14 @@
         </div>
     </section>
     <div id="text-area">
-        <h3 id="recently-added">Recently Added</h3>
+        <h3 class="medium-size-text">Recently Added</h3>
     </div>
     
-    <section id="product-index">
-        <container id="product-container">
+    <section class="product-index">
+        <container class="product-container">
                     <% for (let i = 0; i < items.length; i++) { %>
                         <div class="product-boxes">
-                             <a href="/products/<%= items[i].id %>"><img src="<%= items[i].image %>"width="250px" height="250px"/></a>
+                             <a href="/products/<%= items[i].id %>"><img src="<%= items[i].image %>"width="225px" height="250px"/></a>
                             <%= items[i].color %>
                             <%= items[i].price %>
                     

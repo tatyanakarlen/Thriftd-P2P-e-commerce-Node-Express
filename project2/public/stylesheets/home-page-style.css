@@ -9,8 +9,10 @@ html {
   }
   
   a {
-    color: #00B7FF;
+    color: black;
+    text-decoration: none;
   }
+
   
   #header {
     display: flex; 
@@ -36,14 +38,14 @@ html {
     display: flex; 
     flex-direction: row; 
     justify-content: space-between; 
-    color: #504F4f;
+    color: black;
     font-size: 13px;
     
   }
 
   .UL-left {
-      margin-left: -4rem; 
-      margin-top: 1rem; 
+      margin-left: -26rem; 
+      margin-top: 1.15rem; 
   }
   
   .UL-left li {
@@ -76,18 +78,7 @@ html {
     align-items: center;
   } 
   
-  /* .center-logo {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0.25rem;
-  } */
-  
-  
-  /* #slogan {
-    padding-left: 1rem; 
-  } */
+
   
   .main-menu {
     display: flex; 
@@ -124,6 +115,17 @@ html {
     width: 325px; 
     background-color: red;
   }
+
+  #right-side-img1 {
+      margin-left: 2rem; 
+  }
+
+  #right-side-img2 {
+    margin-right: -8rem; 
+
+  }
+
+
   
   #left-side-content {
     background-color: #eaedee; 
@@ -143,7 +145,7 @@ html {
     margin-top: 2rem; 
   } */
 
-  #product-container {
+  .product-container {
       display: flex; 
       flex-direction: row;
       justify-content: center;
@@ -153,23 +155,21 @@ html {
       gap: 1rem; 
       margin-top: 1rem; 
       flex-wrap: wrap;
-
-  }
-
-  .product-boxes {
-    display: flex; 
-    flex-direction: column; 
-    height: 250px; 
-    width: 250px;
 }
 
-  /* .thrifted {
-      margin-left: 3rem; 
-      margin-top: 1rem; 
-      background-color: red;
-      height: 50px; 
-      width: 300px; 
-  } */
+.product-container > div {
+    padding-bottom: 1rem; 
+}
+
+  .product-boxes {
+     display: flex; 
+    flex-direction: column; 
+    /* justify-content: center; */
+    height: 250px; 
+    width: 225px; 
+  }
+
+ 
 
   #LOGO {
     font-size: 25px;
@@ -183,6 +183,148 @@ html {
 
 #H1-LOGO {
     margin-top: 0.5rem; 
+    margin-left: 1.5rem; 
     font-size: 20px; 
     /* movement should be targeted here */
 }
+
+.medium-size-text {
+    margin-left: 2.4rem; 
+}
+
+
+ /* show product page css */
+
+ .main-show {
+    width: 100%; 
+    background-color: #eaedee; 
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1.5rem; 
+    min-height: 100px;
+    overflow: hidden;
+  }
+  
+  .main-show {
+    background-color: #eaedee;
+    display: flex; 
+    justify-content: center;
+    gap: 2rem; 
+
+
+  }
+
+ 
+  
+  .main-divs-show {
+    /* height: 425px; 
+    width: 325px;  */
+    background-color: #eaedee;
+    display: flex; 
+    justify-content: center; 
+    gap: 1.5rem; 
+  }
+  
+  #right-side-content {
+    background-color: #eaedee; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    /* height: 425px;  */
+    width: 350px; 
+    margin-right: 2rem; 
+    min-height: 100px; 
+    
+  }
+
+  #left-side-img {
+    min-height: 100px; 
+    width: 400px; 
+    min-height: 100px; 
+    overflow: hidden;
+  }
+
+  #comment-section {
+      margin-top: -1rem; 
+      background-color: #eaedee;
+      min-height: 100px; 
+      overflow: hidden;
+  }
+
+  #update-delete {
+      display: flex; 
+      flex-direction: row;
+  }
+
+#button {
+    margin-top: 2rem;
+}
+
+.new-post-form-container {
+    display: flex; 
+    margin: auto; 
+    justify-content: center;
+    /* width: 500px; */
+    clear: both;
+  }
+  
+  .new-post-form-container input {
+    width: 100%;
+    clear: both;
+  }
+
+  .form > * {
+      padding: 1rem;
+  }
+
+  .form > button {
+      padding: 1rem; 
+  }
+
+  .form > input {
+      padding-top: 1rem; 
+  } 
+
+ 
+
+  label, input {
+      display: block;
+  }
+
+  label {
+      margin-bottom: -1rem; 
+  }
+
+  #img-upload-btn {
+      margin-top: 0.6rem; 
+  }
+
+  #submit-btn {
+    margin-top: 1rem; 
+  }
+
+  .NEW-POST-H2 {
+      text-align: center; 
+      margin-left: -12.3rem; 
+      margin-top: 2rem; 
+  }
+
+  .item-description {
+      height: 7em; 
+      width: 25em; 
+  }
+
+  .small.input {
+      width: 10em; 
+  }
+
+  #update-button {
+
+  }
+
+
+ 
+
+
+ 

@@ -1,30 +1,19 @@
 <%-include('../partials/header') %>
 
-<link rel='stylesheet' href='/stylesheets/new-post-style.css' />
 
-<!-- description: String,
-  category: String,
-  size: String, 
-  price: Number, 
-  brand: String, 
-  color: String,
-condition: String  -->
-
-  <h2>LIST NEW ITEM</h2>
-<div class="container">
-    <form action="/products" method="POST" enctype="multipart/form-data">
-        <label>Item Description:<br>
-            <textarea name="description" required placeholder="Tell us about your item. Be descriptive as possible without repeating yourself."></textarea>
-        </label></br>
-        <br>
-        <label>Category:<br>
+  <h2 class="NEW-POST-H2">List New Item</h2>
+<div class="new-post-form-container">
+    <form class="form" action="/products" method="POST" enctype="multipart/form-data">
+        <label><strong>Description:</strong><br>
+            <textarea class="item-description" type="text" name="description" required placeholder="Tell us about your item. Be descriptive as possible without repeating yourself."></textarea>
+        </label>
+        <label for='category'><strong>Category:</strong>
             <select name="category" required>
                 <option value="Clothing">Clothing</option>
                 <option value="Accesories">Accesories</option>
-                <br>
-            </select></br>
-        </label></br>
-           <label>Size:
+            </select>
+        </label>
+           <label><strong>Size:</strong>
                 <select name="size" required>
                     <option value="NA">N/A</option>
                     <option value="XS">XS</option>
@@ -32,31 +21,33 @@ condition: String  -->
                     <option value="M">M</option>
                     <option value="L">L</option>
                     <option value="XL">XL</option>
-                </select><br>
-            </label></br>
-        <label>Price:$
-            <br><input type="text" required name="price" placeholder="Enter number">
-        </label><br>
-        <label>Brand:
-            <input type="text" required name="brand">
-        </label></br>
-        <label>Color:
-            <input type="text" required name="color">
-        </label></br>
-        <label>Condition:
+                </select>
+            </label>
+        <label><strong>Price:$</strong>
+            <input class="small input" type="text" required name="price" placeholder="Enter number">
+        </label>
+        <label><strong>Brand:</strong>
+            <input class="small input" type="text" required name="brand">
+        </label>
+        <label><strong>Color:</strong>
+            <input class="small input" type="text" required name="color">
+        </label>
+        <label><strong>Condition:</strong>
             <select name="condition" required>
                 <option value="true vintage, VG">true vintage-VG</option>
                 <option value="deadstock, LIKE NEW">deadstock-LIKE NEW</option>
                 <option value="collectible-needs love">collectible-NEEDS LOVE</option>
                 <option value="modern pre-loved, VG">modern pre-loved-VG+</option>
                 <option value="modern pre-loved, LIKE NEW">modern pre-loved-LIKE NEW</option>
-            </select><br>
-            <label>Shipping:$
-                <br><input type="text" name="shipping" required placeholder="Enter number">
-            </label><br>
-            <label>Upload Images:
-                    <input type="file" name='image'>
-                    <input type="submit">
+            </select>
+        </label>
+            <label><strong>Shipping:$</strong>
+                <input class="small input" type="text" name="shipping" required placeholder="Enter number">
+            </label>
+            <label><strong>Upload Images:</strong>
+                    <input id="img-upload-btn" type="file" name='image'>
+                    <input id="submit-btn" type="submit">
+            </label>
     </form>
 </div>
 

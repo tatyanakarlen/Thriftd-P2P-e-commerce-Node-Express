@@ -17,9 +17,9 @@
                         <h1 id="H1-LOGO"><a id="LOGO" href="/products">thriftd</a></h1>
                     </div>
                     <ul class="UL-left">
-                        <li>About</li>
-                        <li>Clothing</li>
-                        <li>Accesories</li>
+                        <li><strong>About</strong></li>
+                        <li><strong>Clothing</strong></li>
+                        <li><strong>Accesories</strong></li>
                     </ul>
         
                 
@@ -27,9 +27,9 @@
                 <div class="menu-right">
                     <ul class="UL-right">
                             <% if (user) { %>
-                            <li><a href="/logout">Logout</a></li>
-                            <li><a href="/products/new">Post Item</a></li>
-                            <li><a href="/users/<%= user._id %>/myItems">My Items</a></li>
+                            <li><strong><a href="/logout">Logout</a></strong></li>
+                            <li><strong><a href="/products/new">Post Item</a></strong></li>
+                            <li><strong><a href="/users/<%= user._id %>/myItems">My Items</a></strong></li>
                     
                             
                             <% } else { %>

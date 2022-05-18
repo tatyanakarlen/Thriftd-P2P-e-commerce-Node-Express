@@ -4,6 +4,10 @@ const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   googleId: String,
+  wishList: [{
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'Item'
+}], 
 }, {
   timestamps: true
 });

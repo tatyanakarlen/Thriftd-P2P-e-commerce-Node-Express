@@ -2,21 +2,19 @@
 
 
 
-
-<form action="/products/<%= item.id %>/?_method=PUT" method="POST">
-    Enter or select your new details:<br>
-    <label>Item Description:<br>
-        <input type="text" name="description" placeholder="<%= item.description %>" value="<%= item.description %>">
-    </label></br>
-    <br>
-    <label>Category:<br>
+<h2 class="NEW-POST-H2">Edit Item Post</h2>
+<div class="new-post-form-container">
+<form class="form" action="/products/<%= item.id %>/?_method=PUT" method="POST">
+    <label><strong>Item Description:</strong><br>
+        <textarea class="item-description" type="text" name="description" placeholder="<%= item.description %>" value="<%= item.description %>"></textarea>
+    </label>
+    <label><strong>Category:</strong>
         <select name="category" required>
             <option value="Clothing">Clothing</option>
             <option value="Accesories">Accesories</option>
-            <br>
-        </select></br>
-    </label></br>
-       <label>Size:
+        </select>
+    </label>
+       <label><strong>Size:</strong>
             <select name="size" required>
                 <option value="NA">N/A</option>
                 <option value="XS">XS</option>
@@ -24,29 +22,30 @@
                 <option value="M">M</option>
                 <option value="L">L</option>
                 <option value="XL">XL</option>
-            </select><br>
-        </label></br>
-    <label>Price:
-        <br><input type="text" name="price" placeholder="<%= item.price %>" value="<%= item.price %>">
-    </label><br>
-    <label>Brand:
-        <input type="text" name="brand" placeholder="<%= item.brand %>" value="<%= item.brand %>">
-    </label></br>
-    <label>Color:
-        <input type="text" name="color" placeholder="<%= item.color %>" value="<%= item.color %>">
-    </label></br>
-    <label>Condition:
+            </select>
+        </label>
+    <label><strong>Price:$</strong>
+        <input class="small input" type="text" name="price" placeholder="<%= item.price %>" value="<%= item.price %>">
+    </label>
+    <label><strong>Brand:</strong>
+        <input class="small input" type="text" name="brand" placeholder="<%= item.brand %>" value="<%= item.brand %>">
+    </label>
+    <label><strong>Color:</strong>
+        <input class="small input" type="text" name="color" placeholder="<%= item.color %>" value="<%= item.color %>">
+    </label>
+    <label><strong>Condition:</strong>
         <select name="condition" required>
             <option value="true vintage, VG">true vintage-VG</option>
             <option value="deadstock, LIKE NEW">deadstock-LIKE NEW</option>
             <option value="collectible-needs love">collectible-NEEDS LOVE</option>
             <option value="modern pre-loved, VG">modern pre-loved-VG+</option>
             <option value="modern pre-loved, LIKE NEW">modern pre-loved-LIKE NEW</option>
-        </select><br>
-        <label>Shipping:$
-            <br><input type="text" name="shipping" placeholder="<%= item.shipping %>" value="<%= item.shipping %>">
-        </label><br>
-        <button type="submit">Update</button>
+        </select>
+    </label>
+        <label><strong>Shipping:$</strong>
+            <input class="small input" type="text" name="shipping" placeholder="<%= item.shipping %>" value="<%= item.shipping %>">
+        </label>
+        <button id="update-button" type="submit">Update</button>
 </form>
 </div>
 

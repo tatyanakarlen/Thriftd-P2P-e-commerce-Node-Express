@@ -1,11 +1,11 @@
 <%-include('../partials/header') %>
 
-    <section class="main">
-        <div class="main-divs" id="left-side-img">
-            <img src=<%= item.image %> width="400px" height="500px"/>
+    <section class="main-show">
+        <div class="main-divs-show" id="left-side-img">
+            <img src="<%= item.image %>" width="400px" height="500px"/>
             
     </div>
-        <div class="main-divs" id="right-side-content">
+        <div class="main-divs-show" id="right-side-content">
             <ul>
                 <li>Posted By: <%=item.userName.replace(/\s+/g, '') %>
                 </li>
@@ -27,38 +27,49 @@
             </ul>
             <% if (user) { %>
             <% if (item.userName==user.name) { %>
-                <a href="/products/<%= item.id%>/edit">UPDATE</a>
+                <div id="update-delete">
+                <button><a href="/products/<%= item.id%>/edit">UPDATE</a></button>
                 <form action="/products/<%= item.id %>?_method=DELETE" method="POST">
                     <button>DELETE</button>
                 </form>
+                </div>
                     <% } else { %>
-                        <button>BUY</button>
+                        <button class="BUY">BUY</button>
                         <% } %>
-                        <h2>Comments</h2>
+                        <div id="comment-section">
+                        <h3>Comments</h3>
                         <form id="add-comment-form" method="POST" action="/products/<%= item.id %>/comments">
                             <textarea name="content"></textarea><br>
                             <input type="submit" value="Add Comment">
                         </form>
                         <% if (item.comments.length > 0) { %> 
                           <%  item.comments.forEach(function(c) { %>
-                            <h4><%= c.userName.replace(/\s+/g, '') %> <%= c.content %></h4>
+                        <p><strong><%= c.userName.replace(/\s+/g, '') %></strong> <%= c.content %></p>
+                            
+                    
                                 
                            <% }) %>
                         <% } %>
+                    </div>
                         <% } else { %>
-                            <button>BUY</button>
-                            <h3>Comments</h3>
-                            <h5>Log in to leave a comment</h5>
+                            <div id="button">
+                            <button id="BUY">BUY</button>
+                            </div>
+                            <div id="comment-section">
+                            <h3 id="comments">Comments</h3>
+                            <h4 style="color: red">Log in to leave a comment</h4>
                             <% if (item.comments.length > 0) { %> 
                                 <%  item.comments.forEach(function(c) { %>
-                                  <h4><%= c.userName.replace(/\s+/g, '') %> <%= c.content %></h4>
+                                    <p><strong><%= c.userName.replace(/\s+/g, '') %></strong> <%= c.content %></p>
                                       
                                  <% }) %>
                         <% } %>
+                            </div>
                         <% } %>
 
                        
                     </div>
+            
                 </section>
 
 
@@ -68,17 +79,21 @@
                        
 
 
-    <section>
-        <% for (let i = 0; i < items.length; i++) { %>
-            <div>
-                <img src='images/mirror-lipstick.jpg' width="30px" height="50px" />
-                <%= items[i].color %>
-                <%= items[i].price %>
-                <a href="/products/<%= items[i].id %>">DETAILS</a>
-            </div>
-            <% } %>
-    
-</section>
+                <section class="product-index">
+                    <h3 class="medium-size-text">You might also like</h3>
+                    <container class="product-container">
+                        <% for (let i = 0; i < items.length; i++) { %>
+                            <div class="product-boxes">
+                                 <a href="/products/<%= items[i].id %>"><img src="<%= items[i].image %>"width="225px" height="250px"/></a>
+                                <%= items[i].color %>
+                                <%= items[i].price %>
+                        
+                            </div>
+                            <% } %>
+                        </container>
+                        
+                    
+        </section>
 
 
 
