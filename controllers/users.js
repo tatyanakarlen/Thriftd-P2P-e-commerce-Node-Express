@@ -11,6 +11,20 @@ async function index(req, res) {
     })
 }
 
+
+async function addToWishList(req,res) {
+    let user = await User.findById(req.user.id)
+    await user.wishList.push(req.params.id) 
+    await user.save()
+    // await user.execPopulate('wishList')
+    console.log(user)
+    res.send('it worked!')
+    
+}
+
+
+
+
 // let items = await Item.find({postedBy: req.params.id})
 
 // async function userPublicProfile(req,res) {
@@ -30,16 +44,10 @@ async function index(req, res) {
 
 module.exports = {
     index, 
+    addToWishList
 
 }
 
 
 
 
-// renders index page 
-// async function myItems (req,res) {
-//     let user = await User.findById(req.user)
-//     res.render('products-index.ejs', {
-//         user
-//     }) 
-//   }

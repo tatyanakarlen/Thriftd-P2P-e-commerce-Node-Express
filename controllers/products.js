@@ -96,6 +96,7 @@ function base64_encode(image) {
       console.log(obj)
       let item = await Item.create(obj)
       let items = await Item.find()
+      res.redirect('/products/' + item.id)
   res.render('products/products-show.ejs', {
       item, user: req.user, items
   }) 

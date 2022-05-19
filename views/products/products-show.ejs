@@ -37,6 +37,9 @@
                 </div>
                     <% } else { %>
                         <button class="BUY">BUY</button>
+                        <form id="wishList" method="POST" action="/users/<%= user.id %>/wishList">
+                        <input type="submit" value="ADD TO WISHLIST">
+                        </form>
                         <% } %>
                         <div id="comment-section">
                         <h3>Comments</h3>
