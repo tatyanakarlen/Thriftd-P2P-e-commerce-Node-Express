@@ -3,7 +3,7 @@
 
   <h2 class="NEW-POST-H2">List New Item</h2>
 <div class="new-post-form-container">
-    <form class="form" action="/products" method="POST" enctype="multipart/form-data">
+    <form id="new-post-form" class="form" action="/products" method="POST" enctype="multipart/form-data">
         <label><strong>Title:</strong><br>
             <textarea type="text" name="title" required placeholder="Short title for your item"></textarea>
         </label>
@@ -54,6 +54,13 @@
     </form>
 </div>
 
+<script>
+let form = document.getElementById('new-post-form')
+form.addEventListener('submit', function() {
+    console.log('helloooooo')
+})
+
+</script>
 
 
 

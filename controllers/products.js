@@ -34,7 +34,6 @@ async function show(req, res) {
   let user = await User.findById(req.user)
   let items = await Item.find()
   let item = await Item.findById(req.params.id)
-//   await item.execPopulate('postedBy')
   res.render('products/products-show.ejs', {
     user, item, items
   })
@@ -58,7 +57,7 @@ function base64_encode(image) {
     return bitmap.toString('base64');
   }
 
-  async function create(req,res) {
+  async function create(req,res, next) {
     let image = base64_encode(req.file.path);
   
     const options = {
