@@ -18,15 +18,11 @@
                 </div>
                     <div id="UL-left-side">
                     <ul class="UL-left">
-                        <li><strong>About</strong></li>
-                        <li><strong>Clothing</strong></li>
-                        <li><strong>Accesories</strong></li>
+                        <li><strong><a href="/showAll">Show All</a></strong></li>
+                        <li><strong><a href="/clothing">Clothing</a></strong></li>
+                        <li><strong><a href="/accessories">Accesories</a></strong></li>
                     </ul>
                 </div>
-        
-        
-                
-                
                 <div class="menu-right">
                     <ul class="UL-right">
                             <% if (user) { %>
@@ -36,12 +32,10 @@
                     
                             
                             <% } else { %>
-                            <li><button class="login-out"><strong><a href="/auth/google">Login</a></strong></button></li>
+                            <li><button class="login-out-btn"><strong><a class="login-out-link" href="/auth/google">Login</a></strong></button></li>
                             <li><strong><a href="/auth/google">Sign Up</a></strong></li>
                              <% } %>
                         </li>
-                            
-                       
                     </ul>
                 </div>
             </div>

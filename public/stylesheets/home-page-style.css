@@ -155,7 +155,10 @@ html {
   }
 
  
-
+  #text-area {
+    width: 90%;
+    padding-left: 7rem;
+  }
   
 
   .product-container {
@@ -168,7 +171,9 @@ html {
       gap: 1rem; 
       margin-top: 1rem; 
       flex-wrap: wrap;
-      margin-left: -1.25rem; 
+      margin: auto;
+width: 90%;
+padding: 10px;
   }
   
 
@@ -180,7 +185,7 @@ html {
      display: flex; 
     flex-direction: column; 
     /* justify-content: center; */
-    height: 250px; 
+    height: 275px; 
     width: 225px; 
   }
 
@@ -267,9 +272,10 @@ html {
       overflow: hidden;
   }
 
-  #update-delete {
+  .btns-container{
       display: flex; 
       flex-direction: row;
+      gap: 0.5rem
   }
 
 #button {
@@ -288,13 +294,39 @@ html {
     color: white; 
 }
 
-#shop-now {
+.blk-btns-small {
     background-color: black;
     color: white;
     height: 45px; 
     width: 100px; 
     border: none; 
+    font-size: 16px; 
 }
+
+.white-links {
+  color: white; 
+}
+
+.show-page-UL {
+  list-style-type: none; 
+  padding-inline-start: unset;
+}
+
+.comment-box {
+  width: 11.75rem;
+  height: 15px;
+  padding: 10px; 
+  font: 1em;
+  margin-top: -0.75rem;
+}
+
+.comment-button {
+  margin-top: 5px; 
+  border: none; 
+  background-color: grey;
+  color: white; 
+}
+
 
 .new-post-form-container {
     display: flex; 
@@ -353,6 +385,41 @@ html {
   .small.input {
       width: 10em; 
   }
+
+  /* user myItems page */
+
+  .user-info-container {
+    display: flex; 
+    flex-direction: row;
+    margin-top: 2rem;
+  }
+
+  .avatar {
+    display: flex;
+    /* justify-content: center; */
+  }
+
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    max-width: 200px; 
+    padding-left: 1rem;
+  }
+
+  #avatarIMG {
+    display: flex;
+    align-self:center; 
+    padding-left: 1rem;
+  }
+
+  #user-info-P {
+    margin-top: -0.5rem; 
+  }
+
+
+
+
 
  
 

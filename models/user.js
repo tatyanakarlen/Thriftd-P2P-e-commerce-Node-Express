@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
   email: String,
   googleId: String,
   wishList: {
-    type: mongoose.Schema.Types.ObjectId, 
+    type: [mongoose.Schema.Types.ObjectId], 
     ref: 'Item'
 }, 
 }, {

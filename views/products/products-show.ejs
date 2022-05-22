@@ -6,46 +6,46 @@
             
     </div>
         <div class="main-divs-show" id="right-side-content">
-            <ul>
-                <li>Posted By: <%=item.userName.replace(/\s+/g, '') %>
-                </li>
+            <ul class="show-page-UL">
                 <li>
-                    <%=item.title %>
+                    <strong><%=item.title %></strong>
                 <li>
+                    <li>Posted By: <strong><%=item.userName.replace(/\s+/g, '')%></strong>
+                    </li>
                     <%=item.description %>
                 </li>
-                <li>Category: <%=item.category %>
+                <li><strong>Size:</strong> <%=item.size %>
                 </li>
-                <li>Size: <%=item.size %>
+                <li><strong>Price:</strong> $<%=item.price %>
                 </li>
-                <li>Price: $<%=item.price %>
+                <li><strong>Brand:</strong> <%=item.brand %>
                 </li>
-                <li>Brand: <%=item.brand %>
+                <li><strong>Color:</strong> <%=item.color %>
                 </li>
-                <li>Color: <%=item.color %>
-                </li>
-                <li>Shipping: $<%=item.shipping %>
+                <li><strong>Shipping:</strong> $<%=item.shipping %>
                 </li>
             </ul>
             <% if (user) { %>
             <% if (item.userName==user.name) { %>
-                <div id="update-delete">
-                <button><a href="/products/<%= item.id%>/edit">UPDATE</a></button>
+                <div class="btns-container">
+                <button class="blk-btns-small"><a class="white-links" href="/products/<%= item.id%>/edit">Update</a></button>
                 <form action="/products/<%= item.id %>?_method=DELETE" method="POST">
-                    <button>DELETE</button>
+                    <button class="blk-btns-small">Delete</button>
                 </form>
                 </div>
                     <% } else { %>
-                        <button class="BUY">BUY</button>
-                        <form id="wishList" method="POST" action="/users/<%= user.id %>/wishList">
-                        <input type="submit" value="ADD TO WISHLIST">
+                        <div class="btns-container">
+                        <button class="blk-btns-small">Buy</button>
+                        <form id="wishList" method="POST" action="/products/<%= item.id %>">
+                        <input id='wishlist-btn' class="blk-btns-small" type="submit" value="Wishlist">
                         </form>
+                    </div>
                         <% } %>
                         <div id="comment-section">
-                        <h3>Comments</h3>
+                        <h4>Comments</h4>
                         <form id="add-comment-form" method="POST" action="/products/<%= item.id %>/comments">
-                            <textarea name="content"></textarea><br>
-                            <input type="submit" value="Add Comment">
+                            <textarea class="comment-box" name="content"></textarea><br>
+                            <input class="comment-button" type="submit" value="+ ADD">
                         </form>
                         <% if (item.comments.length > 0) { %> 
                           <%  item.comments.forEach(function(c) { %>

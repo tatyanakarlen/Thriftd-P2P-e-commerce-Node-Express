@@ -1,0 +1,21 @@
+
+<%-include('../partials/header') %>
+
+
+the accesories EJS works
+
+<section class="product-index">
+    <h3 class="medium-size-text">Shop all clothing</h3>
+    <container class="product-container">
+        <% for (let i = 0; i < items.length; i++) { %>
+            <div class="product-boxes">
+                 <a href="/products/<%= items[i].id %>"><img src="<%= items[i].image %>"width="225px" height="250px"/></a>
+                <%= items[i].title %>
+                $<%= items[i].price %>
+        
+            </div>
+            <% } %>
+        </container>
+
+<%-include('../partials/footer') %>
+

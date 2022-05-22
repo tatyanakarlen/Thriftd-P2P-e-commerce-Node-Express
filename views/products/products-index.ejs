@@ -8,7 +8,7 @@
             <h1>WHATEVER YOU STYLE IS, FIND IT ALL HERE</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi sapiente officia dolor sit amet
                 consectetur adipisicing elit. Modi sapiente officiajghjghghfgchfcgfgffgf</p>
-                <button id="shop-now"><strong>Shop Now</strong></button>
+                <button class="blk-btns-small"><a class="white-links" href="/showAll"><strong>Shop Now</strong></a></button>
         </div>
     
     </div>
@@ -19,11 +19,12 @@
             <img src='images/glasses.jpg' width="340px" height="425px" />
         </div>
     </section>
-    <div id="text-area">
-        <h3 class="medium-size-text">Recently Added</h3>
-    </div>
+    
     
     <section class="product-index">
+        <div id="text-area">
+            <h3 class="medium-size-text">Recently Added</h3>
+        </div>
         <container class="product-container">
                     <% for (let i = 0; i < items.length; i++) { %>
                         <div class="product-boxes">
@@ -49,4 +50,4 @@
 
     <%-include('../partials/footer') %>
 
-        </html>
+       

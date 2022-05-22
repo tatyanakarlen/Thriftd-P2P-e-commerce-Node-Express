@@ -1,6 +1,7 @@
 var router = require('express').Router();
 var productsCtrl = require('../controllers/products')
 var uploadCtrl = require('../controllers/upload')
+var userCtrl = require('../controllers/users')
 
 const multer = require("multer");
 const upload = multer({ dest: 'uploads/'});
@@ -26,6 +27,17 @@ router.delete('/:id', productsCtrl.deleteItem);
 
 // images upload
 router.post('/upload', upload.single('image'), uploadCtrl.upload)
+
+// addToWishList
+router.post('/:id', userCtrl.addToWishList) // this will add item to wishlist
+
+
+
+
+
+  
+
+
 
 
 

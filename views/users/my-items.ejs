@@ -1,15 +1,40 @@
 <%-include('../partials/header') %>
 
-WELCOME TO YOUR PROFILE PAGE
+<section class="user-info-container">
+    <div class="avatar">
+    <img id="avatarIMG" src='/public/images/avatar.png' width=100px" height="100px" />
+    </div>
+    <div class="user-info">
+        <h3><%= user.name.replace(/\s+/g, '') %></h3>
+                <p id="user-info-P"><%= user.email %>
+                Joined: <%= user.createdAt.toLocaleDateString() %></p>
+       
+        
+    </div>
+</section>
 
-<p>User:<%= user.name.replace(/\s+/g, '') %>
-</p>
-<p>e-mail:<%= user.email %>
-</p>
-<p> Joined: <% user.createdAt.toLocaleDateString() %>
-</p>
 
-<h1>Your posted items:</h1>
+<h2>Your Wish List:</h2>
+
+
+<% if (user.wishList.length > 0) { %> 
+    <%  user.wishList.forEach(function(w) { %>
+        <div> <img src='/public/images/mirror-lipstick.jpg' width="30px" height="50px" />
+  <p><strong><%= w.price %></strong> 
+    <%= w.title %></p>
+    <a href="/products/<%= w.id %>">DETAILS</a>
+</div>
+
+      <% }) %>
+  <% } else { %>
+    <h4>You currently have no items in Wish List</h4>
+    <% } %>
+
+
+
+
+
+<h2>Your posted items:</h2>
 
 
 <% if (items.length === 0) { %>
@@ -25,6 +50,8 @@ WELCOME TO YOUR PROFILE PAGE
                     <a href="/products/<%= items[i].id %>">DETAILS</a>
                 </div>
         <% } %>
+
+
 
         <%-include('../partials/footer') %>
         
