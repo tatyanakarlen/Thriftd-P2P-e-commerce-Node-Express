@@ -2,6 +2,7 @@ const User = require('../models/user');
 const Item = require('../models/item');
 const request = require('request');
 const fs = require('fs');
+const user = require('../models/user');
 
 module.exports = {
   index,
@@ -10,12 +11,10 @@ module.exports = {
   show, 
   edit, 
   update, 
-  deleteItem
+  deleteItem, 
+  deleteFromWishList
 };
 
-
-
-// res.redirect('/flights/' + flightId)
 
 
 // renders index page 
@@ -104,40 +103,6 @@ function base64_encode(image) {
  
   }
 
-//  creates new item 
-
-// async function create(req,res) {
-// const imageLink = upload(req)
-//   let obj = {
-//       description: req.body.description, 
-//       category: req.body.category, 
-//       size: req.body.size, 
-//       price: req.body.price, 
-//       brand: req.body.brand, 
-//       condition: req.body.condition, 
-//       color: req.body.color, 
-//       shipping: req.body.shipping, 
-//       postedById: req.user.id,
-//       userName: req.user.name, 
-//       image: imageLink
-
-//     //   req.body.userName = req.user.name
-
-//     // images: req.body.image
-// }
-//   let item = await Item.create(obj)
-//   res.render('products/new-item-post.ejs', {
-//       item, user: req.user
-//   })
-// console.log(obj)
-// console.log(imageLink)
-// }
-
-
-
-
-
-
 
 // update functions 
 // renders edit post page with form
@@ -164,17 +129,33 @@ async function deleteItem (req,res) {
     res.redirect('/users/' + req.user.id + '/myItems')
 }
 
-// remove().exec();
+// deletes from user wishList
 
-// Model.remove({ _id: req.body.id }
+async function deleteFromWishList (req, res) {
+  let user = await User.findById(req.user.id)
+  for (let i = 0; i < user.wishList.length; i++) {
+    if (user.wishList[i]._id == req.params.id) {
+      user.wishList.splice(i, 1)
+      }
+  } 
+
+  await user.save()
+  res.redirect('/users/' + req.user.id + '/myItems')
+}
+
+// let wishListItem = await User.find({
+//   _id:req.user.id
+// }, {
+//   'wishList': {
+//     $elemMatch:{
+//       _id: req.params.id
+//     } 
+//   }
+// })
+
+// console.log(wishListItem)
 
 
-// function deleteUser(req,res) {
-//     let userIdFromWildcard = req.params.id;
-//     UserModel.deleteUserFromId(userIdFromWildcard);
-//     // remove the item from the database
-//     res.redirect('/users')
-// }
 
 
 

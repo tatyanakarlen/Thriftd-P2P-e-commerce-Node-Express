@@ -11,14 +11,6 @@ async function index(req, res, next) {
     })
 }
 
-// async function show (req,res,next){
-//     let expenseSup = await Expense.find({createdBy:req.user.id}).populate('supplier')
-//     let user = await User.findById(req.user._id)
-//     res.render('../views/expense/expense.ejs',{title:'Expenses',user:user,expenseSup:expenseSup})
-//   }
-//   const mongoose = require('mongoose');
-  
-//   
 
 
 async function addToWishList(req,res) {
@@ -29,6 +21,17 @@ async function addToWishList(req,res) {
     res.redirect('/users/' + req.user.id + '/myItems')
     
 }
+
+async function userProfile(req,res) {
+    let items = await Item.find({postedById: req.params.id})
+    let user = await User.findById(req.params.id)
+    console.log(items)
+    res.render('users/userProfile.ejs', {
+        items, user
+    })
+}
+
+
 
 
 
@@ -54,7 +57,8 @@ async function addToWishList(req,res) {
 
 module.exports = {
     index, 
-    addToWishList
+    addToWishList,
+    userProfile
 
 }
 

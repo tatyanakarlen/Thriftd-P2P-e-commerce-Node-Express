@@ -2,7 +2,7 @@
 
 <section class="user-info-container">
     <div class="avatar">
-    <img id="avatarIMG" src='/public/images/avatar.png' width=100px" height="100px" />
+    <img id="avatarIMG" src='/images/avatar.png' width="100px" height="100px" />
     </div>
     <div class="user-info">
         <h3><%= user.name.replace(/\s+/g, '') %></h3>
@@ -14,44 +14,51 @@
 </section>
 
 
-<h2>Your Wish List:</h2>
+<h2 class="my-items-headings">Your Wish List:</h2>
 
 
 <% if (user.wishList.length > 0) { %> 
+    <container class="product-container">
     <%  user.wishList.forEach(function(w) { %>
-        <div> <img src='/public/images/mirror-lipstick.jpg' width="30px" height="50px" />
-  <p><strong><%= w.price %></strong> 
-    <%= w.title %></p>
-    <a href="/products/<%= w.id %>">DETAILS</a>
-</div>
+        <div class="product-boxes">
+            <a href="/products/<%= w.id %>"><img src="<%= w.image %>" width="225px" height="250px"/></a>
+            <%= w.title %>
+            $<%= w.price %>
+
+            <form action="/products/<%= w.id %>/wish-list-delete?_method=DELETE" method="POST">
+                <button>X</button>
+            </form>
+        </div>
 
       <% }) %>
+    </container>
   <% } else { %>
-    <h4>You currently have no items in Wish List</h4>
+    <h4 class="my-items-headings">You currently have no items in Wish List</h4>
     <% } %>
 
 
 
 
 
-<h2>Your posted items:</h2>
+<h2 class="my-items-headings">Your posted items:</h2>
 
 
 <% if (items.length === 0) { %>
-    <h2>You currently do not have posted items</h2>
+    <h2 class="my-items-headings">You currently do not have posted items</h2>
 <% } %>
 
-
-
+<container class="product-container">
 <% for (let i=0; i < items.length; i++) { %>
-        <div> <img src='/public/images/mirror-lipstick.jpg' width="30px" height="50px" />
-            <%= items[i].color %>
+    <div class="product-boxes">
+            <a href="/products/<%= items[i].id %>"><img src="<%= items[i].image %>" width="225px" height="250px" /></a>
+            <%= items[i].title %>
                 <%= items[i].price %>
-                    <a href="/products/<%= items[i].id %>">DETAILS</a>
                 </div>
+            
         <% } %>
+    </container>
 
-
+   
 
         <%-include('../partials/footer') %>
         

@@ -8,9 +8,9 @@
         <div class="main-divs-show" id="right-side-content">
             <ul class="show-page-UL">
                 <li>
-                    <strong><%=item.title %></strong>
+                    <h3><strong><%=item.title %></strong></h3>
                 <li>
-                    <li>Posted By: <strong><%=item.userName.replace(/\s+/g, '')%></strong>
+                    <li>Posted By: <a href="/users/<%=item.postedById%>"><strong><%=item.userName.replace(/\s+/g, '')%></strong></a>
                     </li>
                     <%=item.description %>
                 </li>
@@ -45,7 +45,7 @@
                         <h4>Comments</h4>
                         <form id="add-comment-form" method="POST" action="/products/<%= item.id %>/comments">
                             <textarea class="comment-box" name="content"></textarea><br>
-                            <input class="comment-button" type="submit" value="+ ADD">
+                            <input class="comment-button" type="submit" value="Post">
                         </form>
                         <% if (item.comments.length > 0) { %> 
                           <%  item.comments.forEach(function(c) { %>

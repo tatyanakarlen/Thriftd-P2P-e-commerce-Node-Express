@@ -1,8 +1,9 @@
 <%-include('../partials/header') %>
 
 
-  <h2 class="NEW-POST-H2">List New Item</h2>
+ 
 <div class="new-post-form-container">
+    <h2 class="NEW-POST-H2">List New Item</h2>
     <form id="new-post-form" class="form" action="/products" method="POST" enctype="multipart/form-data">
         <label><strong>Title:</strong><br>
             <textarea type="text" name="title" required placeholder="Short title for your item"></textarea>
@@ -49,15 +50,20 @@
             </label>
             <label><strong>Upload Images:</strong>
                     <input id="img-upload-btn" type="file" name='image'>
-                    <input id="submit-btn" type="submit">
+                    <input id="submit-btn" class="blk-btns-small" type="submit">
             </label>
+            <div id="submit-message"><h2></h2></div>
     </form>
 </div>
 
+
+
 <script>
+
+    let message = document.getElementById('submit-message')
 let form = document.getElementById('new-post-form')
 form.addEventListener('submit', function() {
-    console.log('helloooooo')
+    message.innerHTML = 'Loading...please wait'
 })
 
 </script>

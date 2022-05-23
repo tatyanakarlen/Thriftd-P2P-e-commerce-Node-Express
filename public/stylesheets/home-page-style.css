@@ -19,6 +19,7 @@ html {
     display: flex; 
     flex-direction: column;
     margin-top: 1rem; 
+    width: 90%;
   }
   
   
@@ -38,19 +39,22 @@ html {
     background-color: white;
     display: flex; 
     flex-direction: row; 
-    justify-content: space-between; 
+    /* justify-content: space-around;  */
+    align-items: center; 
     /* align-content: space-around; */
     /* color: black; */
     font-size: 13px;
     /* gap: 10px 30px;  */
-    flex-grow: 3; 
+    /* flex-grow: 3;  */
+    /* padding-right: 2rem; */
+    width: 90%; 
     
   }
 
   /* .UL-left {
       margin-left: -26rem; 
       /* margin-top: 1.15rem;  */
-  /* } */ *
+  /* } */ 
   
   .UL-left li {
     list-style-type: none;
@@ -65,51 +69,44 @@ html {
   }
   
   
-  .menu-left {
+  /* .menu-left {
     height: 50px; 
     width: 400px; 
     display: flex;
     flex-direction: row;
     align-items: center;
     
-  }
+  } */
   
   .menu-right {
     height: 50px; 
-    width: 400px; 
+    /* width: 400px;  */
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: auto; 
     /* margin-right: 1rem;  */
   } 
   
 
-  
-  /* .main-menu {
-    display: flex; 
-    justify-content: center; 
-    margin-bottom: -1rem; 
-  } */
-  
-  /* .main-menu a {
-    padding-left: 6em;
-  } */
+
+  #UL-left {
+   padding: none; 
+  }
 
   #UL-left-side {
-    /* margin-left: 7rem;  */
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
   }
   
-  /* .btns {
-    border: none; 
-    background-color: white;
-    cursor: pointer; 
-    font-size: 17px;
-  } */
   
-  
+  .thriftd {
+    padding-left: 4rem 
+  }
   
   .main {
-    width: 100%; 
+    width: 90%; 
     background-color: #eaedee; 
     display: flex; 
     flex-direction: row;
@@ -117,31 +114,28 @@ html {
     margin-top: 1.5rem; 
     min-height: 100px;
     overflow: hidden;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    /* padding: 0 6rem;  */
     
   }
   
   .main-divs {
-    height: 425px; 
-    width: 325px; 
+    /* height: 425px;  */
+    /* width: 325px;  */
     background-color: #eaedee; 
     /* margin-left: 2rem; */
   }
 
-  #right-side-img1 {
-      margin-left: 8rem; 
+  
+
+  #img-container {
+    width: 50%; 
+    display: flex; 
+    flex-direction: row;
+    padding-right: 4rem; 
+     
   }
-
-  #right-side-img2 {
-    margin-right: -1rem; 
-
-  }
-
-  /* #right-side-content-new-post-ejs {
-      min-height: 100px;
-      overflow: hidden;
-      background-color: #eaedee; 
-  } */
-
 
   
   #left-side-content {
@@ -150,15 +144,10 @@ html {
     flex-direction: column;
     justify-content: center;
     height: 400px; 
-    width: 375px; 
-    margin-left: -4rem;  
+    width: 50%; 
   }
 
  
-  #text-area {
-    width: 90%;
-    padding-left: 7rem;
-  }
   
 
   .product-container {
@@ -187,6 +176,18 @@ padding: 10px;
     /* justify-content: center; */
     height: 275px; 
     width: 225px; 
+    position: relative; 
+  }
+
+  .product-boxes > form > button {
+    background-color: transparent;
+    cursor: pointer; 
+    border: none; 
+  }
+
+  .product-boxes > form {
+    position: absolute; 
+    right: 0; 
   }
 
  
@@ -195,22 +196,19 @@ padding: 10px;
     font-size: 35px; 
     color: black; 
     text-decoration: none;
-    margin-left: 1rem; 
+    /* margin-left: 1rem;  */
     margin-top: -1rem; 
     font-size: 35px;
     /* font should be targeted here */
 }
 
 #H1-LOGO {
-    margin-top: 0.2rem; 
-    margin-left: 2.5rem; 
+    /* margin-top: 0.2rem;  */
+    /* margin-left: 2.5rem;  */
     font-size: 30px; 
     /* movement should be targeted here */
 }
 
-.medium-size-text {
-    margin-left: 3rem; 
-}
 
 
  /* show product page css */
@@ -303,6 +301,11 @@ padding: 10px;
     font-size: 16px; 
 }
 
+#update-button {
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+
 .white-links {
   color: white; 
 }
@@ -310,6 +313,7 @@ padding: 10px;
 .show-page-UL {
   list-style-type: none; 
   padding-inline-start: unset;
+  margin-top: -4rem;
 }
 
 .comment-box {
@@ -332,8 +336,11 @@ padding: 10px;
     display: flex; 
     margin: auto; 
     justify-content: center;
+    flex-direction: column;
     /* width: 500px; */
     clear: both;
+    width: 30%;
+    margin-top: 1rem
   }
   
   .new-post-form-container input {
@@ -363,18 +370,39 @@ padding: 10px;
       margin-bottom: -1rem; 
   }
 
+   
+
   #img-upload-btn {
-      margin-top: 0.6rem; 
+      margin-top: 0.6rem;
+      margin-bottom: 1rem; 
+      /* position: absolute;  */
+      /* border: none; 
+      background-color: red;
+      color: white;   */
+      /* border: none; 
+      background-color: red;
+      color: white;   */
   }
 
+ 
+
+  .input-submit-btn {
+    border: none; 
+    background-color: red;
+    color: white; 
+  }
+  /* #file-upload-button {
+     border: none; 
+      background-color: red;
+      color: white;  
+  } */
+
   #submit-btn {
-    margin-top: 1rem; 
+    /* margin-top: 1rem;  */
   }
 
   .NEW-POST-H2 {
-      text-align: center; 
-      margin-left: -12.3rem; 
-      margin-top: 2rem; 
+    margin-left: 1rem;
   }
 
   .item-description {
@@ -392,6 +420,7 @@ padding: 10px;
     display: flex; 
     flex-direction: row;
     margin-top: 2rem;
+    gap: 1rem; 
   }
 
   .avatar {
@@ -404,17 +433,26 @@ padding: 10px;
     flex-direction: column;
     /* justify-content: center; */
     max-width: 200px; 
-    padding-left: 1rem;
   }
 
   #avatarIMG {
     display: flex;
     align-self:center; 
-    padding-left: 1rem;
+    padding-left: 3.5rem;
   }
 
   #user-info-P {
     margin-top: -0.5rem; 
+  }
+
+  .my-items-headings {
+    padding-left: 3.5rem; 
+  }
+
+  /* categories EJS's */
+
+  .product-index {
+    margin-top: 3rem; 
   }
 
 

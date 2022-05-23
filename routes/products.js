@@ -31,15 +31,14 @@ router.post('/upload', upload.single('image'), uploadCtrl.upload)
 // addToWishList
 router.post('/:id', userCtrl.addToWishList) // this will add item to wishlist
 
+// removeFromWishList 
+router.delete('/:id/wish-list-delete', productsCtrl.deleteFromWishList)
+
 
 
 
 
   
-
-
-
-
 
 
 
