@@ -2,7 +2,7 @@
 
 <div class="new-post-form-container">
     <h2 class="NEW-POST-H2">Add new shipping information</h2>
-    <form id="buy-form" class="form" action="/products/:id/order" method="POST">
+    <form id="buy-form" class="form" action="/products/<%= item.id %>/order" method="POST">
         <label><strong>First and last name</strong><br>
             <input type="text" name="name" placeholder="First name last name"></input>
         </label>
@@ -44,6 +44,7 @@
             <input class="small input" type="text" name="securitycode" placeholder="XXX">
         </label>
             <button id="place-order-btn" class="blk-btns-small" type="submit">Place Order</button>
+            <div id="submit-message"><h2></h2></div>
     </form>
 </div>
 

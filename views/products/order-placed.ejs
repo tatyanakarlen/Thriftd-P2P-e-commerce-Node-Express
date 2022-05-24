@@ -1,1 +1,49 @@
-thank you for your order
+<%-include('../partials/header') %>
+
+<div id="order-placed-container">
+    <div>
+        <h2>Thank you for your order!</h2>
+        <p>You will recieve an order confirmation shortly. Your order # is 6657467465767365765.
+            <br>
+            Below are the details for your order:</p> <br>
+            <div id="order-details">
+                <div id="order-placed-UL">
+            <ul class="show-page-UL">
+                <li>
+                    <h3 id="item-title"><strong><%=item.title %></strong></h3>
+                </li>
+                <li><strong>Item#:</strong> <%=item.id %>
+                </li>
+                <li><strong>Size:</strong> <%=item.size %>
+                </li>
+                <li><strong>Price:</strong> $<%=item.price %>
+                </li>
+                <li><strong>Brand:</strong> <%=item.brand %>
+                </li>
+                <li><strong>Color:</strong> <%=item.color %>
+                </li>
+                <li><strong>Shipping:</strong> $<%=item.shipping %>
+                </li>
+                <li><strong>Posted By: <a href="/users/<%=item.postedById%>"><%=item.userName.replace(/\s+/g, '')%></strong></a>
+                </li>
+            </ul>
+        </div>
+        <div id="order-placed-img">
+            <img src="<%= item.image %>" width="60%" height="100%"/>
+        </div>
+    </div>
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<%-include('../partials/footer') %>

@@ -147,14 +147,18 @@ async function deleteFromWishList (req, res) {
 
 async function buy (req,res) {
   let user = await User.findById(req.user)
+  let item = await Item.findById(req.params.id)
   res.render('products/buy-form.ejs', {
-    user
+    user, item
   })
 }
 
 async function order (req,res) {
   let user = await User.findById(req.user)
-  res.render('products/order-placed.ejs')
+  let item = await Item.findById(req.params.id)
+  res.render('products/order-placed.ejs', {
+    user, item
+  })
 }
 
 

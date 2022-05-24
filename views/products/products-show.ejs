@@ -8,11 +8,9 @@
         <div class="main-divs-show" id="right-side-content">
             <ul class="show-page-UL">
                 <li>
-                    <h3><strong><%=item.title %></strong></h3>
+                    <h3 id="item-title"><strong><%=item.title %></strong></h3>
                 <li>
-                    <li>Posted By: <a href="/users/<%=item.postedById%>"><strong><%=item.userName.replace(/\s+/g, '')%></strong></a>
-                    </li>
-                    <%=item.description %>
+                    <li><%=item.description %></li>
                 </li>
                 <li><strong>Size:</strong> <%=item.size %>
                 </li>
@@ -23,6 +21,8 @@
                 <li><strong>Color:</strong> <%=item.color %>
                 </li>
                 <li><strong>Shipping:</strong> $<%=item.shipping %>
+                </li>
+                <li><strong>Posted By: <a href="/users/<%=item.postedById%>"><%=item.userName.replace(/\s+/g, '')%></strong></a>
                 </li>
             </ul>
             <% if (user) { %>
@@ -42,14 +42,14 @@
                     </div>
                         <% } %>
                         <div id="comment-section">
-                        <h4>Comments</h4>
+                        <h4 class="roboto">Comments</h4>
                         <form id="add-comment-form" method="POST" action="/products/<%= item.id %>/comments">
                             <textarea class="comment-box" name="content"></textarea><br>
                             <input class="comment-button" type="submit" value="Post">
                         </form>
                         <% if (item.comments.length > 0) { %> 
                           <%  item.comments.forEach(function(c) { %>
-                        <p><strong><%= c.userName.replace(/\s+/g, '') %></strong> <%= c.content %></p>
+                        <p class="comments"><strong><%= c.userName.replace(/\s+/g, '') %></strong> <%= c.content %></p>
                             
                     
                                 
@@ -58,14 +58,14 @@
                     </div>
                         <% } else { %>
                             <div id="button">
-                            <button class="blk-btns-small" id="BUY">BUY</button>
+                            <button class="blk-btns-small"><a class="white-links" href="/products/<%= item.id%>/buy">Buy</a></button>
                             </div>
                             <div id="comment-section">
-                            <h4 id="comments">Comments</h4>
-                            <h5 id="log-in-to-comment" style="color: red">Log in or sign up to post a comment</h5>
+                            <h4 class="roboto">Comments</h4>
+                            <h5 id="log-in-to-comment" style="color: red">You must be loggied in to post a comment</h5>
                             <% if (item.comments.length > 0) { %> 
                                 <%  item.comments.forEach(function(c) { %>
-                                    <p><strong><%= c.userName.replace(/\s+/g, '') %></strong> <%= c.content %></p>
+                                    <p class="comments"><strong><%= c.userName.replace(/\s+/g, '') %></strong> <%= c.content %></p>
                                       
                                  <% }) %>
                         <% } %>

@@ -1,10 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* top is roboto bold */
+
 html {
-    height: 100%; 
+    min-height: 100%; 
     box-sizing: border-box;
   }
   
   body {
-    height: 100%; 
+    min-height: 100%; 
     /* padding: 27px;  */
     font: 14px; 
     font-family: Arial;
@@ -61,12 +75,16 @@ html {
     list-style-type: none;
     display: inline;
     padding-left: 2em; 
+    font-size: 14px; 
+    font-weight: bold; 
   }
   
   .UL-right li {
     list-style-type: none;
     display: inline; 
     padding-right: 2em; 
+    font-size: 14px; 
+    font-weight: bold; 
   }
   
   
@@ -86,6 +104,8 @@ html {
     flex-direction: row;
     align-items: center;
     margin-left: auto; 
+    margin-right: -12rem; 
+
     /* margin-right: 1rem;  */
   } 
   
@@ -99,7 +119,11 @@ html {
     display: flex; 
     flex-direction: column;
     justify-content: center;
+    margin-left: 2rem; 
   }
+
+ 
+
   
   
   .thriftd {
@@ -146,6 +170,7 @@ html {
     justify-content: center;
     height: 400px; 
     width: 50%; 
+    padding-right: 5rem; 
   }
 
  
@@ -202,7 +227,12 @@ html {
     /* margin-left: 1rem;  */
     margin-top: -1rem; 
     font-size: 35px;
+   
+    /* font-family: 'Merriweather Sans', sans-serif; */
+    /* font-family: 'Mulish', sans-serif; */
     /* font should be targeted here */
+    font-family: 'Nunito', sans-serif;
+    
 }
 
 #H1-LOGO {
@@ -307,6 +337,7 @@ html {
 #update-button {
   margin-left: 1rem;
   margin-top: 1rem;
+  width: 21em; 
 }
 
 .white-links {
@@ -316,7 +347,22 @@ html {
 .show-page-UL {
   list-style-type: none; 
   padding-inline-start: unset;
-  margin-top: -4rem;
+  margin-top: -1rem;
+}
+
+.show-page-UL > li {
+  padding: 1px; 
+  color: rgb(37, 37, 37); 
+  font-family: 'Roboto', sans-serif;
+  padding-right: 2px; 
+}
+
+.show-page-UL > li:first-child {
+  font-weight: bold;
+}
+
+#item-title {
+  font-weight: bold;
 }
 
 .comment-box {
@@ -332,6 +378,10 @@ html {
   border: none; 
   background-color: grey;
   color: white; 
+}
+
+.comments {
+  font-size: 14px; 
 }
 
 
@@ -400,9 +450,7 @@ html {
       color: white;  
   } */
 
-  #submit-btn {
-    /* margin-top: 1rem;  */
-  }
+ 
 
   .NEW-POST-H2 {
     margin-left: 1rem;
@@ -436,7 +484,9 @@ html {
     flex-direction: column;
     /* justify-content: center; */
     max-width: 200px; 
+    font-family: 'Roboto', sans-serif;
   }
+
 
   #avatarIMG {
     display: flex;
@@ -449,7 +499,8 @@ html {
   }
 
   .my-items-headings {
-    padding-left: 3.5rem; 
+    padding-left: 3.5rem;
+    font-family: 'Roboto', sans-serif; 
   }
 
   /* categories EJS's */
@@ -458,6 +509,74 @@ html {
     margin-top: 3rem; 
   }
 
+  #place-order-btn { 
+      margin-left: 1rem;
+      margin-top: 1rem;
+      width: 18.5em; 
+    }
+
+    #shop-now-btn {
+      margin-top: 1em
+    }
+
+    #recently-added {
+      padding-left: 4rem;
+    }
+
+    .medium-size-text {
+      padding-left: 4rem;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .roboto {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .roboto-bold {
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+    }
+
+    .arial-small {
+      font-size: 15px; 
+    }
+
+    #order-details {
+      display: flex;  
+      flex-direction: row;
+      width: 100%; 
+    }
+
+    #order-placed-container {
+      display: flex; 
+      margin: auto; 
+      flex-direction: column;
+      width: 50%; 
+      min-height: 100px; 
+      overflow: hidden; 
+      justify-content: center;
+      padding-top: 1rem; 
+      font-family: 'Roboto', sans-serif;
+    }
+
+    #order-placed-UL {
+      display: flex;
+      flex-direction: column; 
+      width: 50%; 
+      min-height: 100px; 
+      overflow: hidden; 
+}
+
+#order-placed-UL > li {
+  font-family: 'Roboto', sans-serif;
+}
+
+#order-placed-img {
+  display: flex; 
+  width: 50%; 
+  
+}
+    
 
 
 
