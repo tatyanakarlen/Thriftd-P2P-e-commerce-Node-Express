@@ -14,7 +14,7 @@
 </section>
 
 
-<h2 class="my-items-headings">Your Wish List:</h2>
+<h2 class="my-items-headings">Wish List:</h2>
 
 
 <% if (user.wishList.length > 0) { %> 
@@ -26,25 +26,25 @@
             $<%= w.price %>
 
             <form action="/products/<%= w.id %>/wish-list-delete?_method=DELETE" method="POST">
-                <button>X</button>
+                <button><strong>x</strong></button>
             </form>
         </div>
 
       <% }) %>
     </container>
   <% } else { %>
-    <h4 class="my-items-headings">You currently have no items in Wish List</h4>
+    <h4 class="my-items-headings">No items in Wish List</h4>
     <% } %>
 
 
 
 
 
-<h2 class="my-items-headings">Your posted items:</h2>
+<h2 class="my-items-headings">Posted for sale:</h2>
 
 
 <% if (items.length === 0) { %>
-    <h2 class="my-items-headings">You currently do not have posted items</h2>
+    <h2 class="my-items-headings">No items posted for sale</h2>
 <% } %>
 
 <container class="product-container">

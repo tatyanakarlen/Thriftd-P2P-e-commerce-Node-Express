@@ -35,7 +35,7 @@
                 </div>
                     <% } else { %>
                         <div class="btns-container">
-                        <button class="blk-btns-small">Buy</button>
+                        <button class="blk-btns-small"><a class="white-links" href="/products/<%= item.id%>/buy">Buy</a></button>
                         <form id="wishList" method="POST" action="/products/<%= item.id %>">
                         <input id='wishlist-btn' class="blk-btns-small" type="submit" value="Wishlist">
                         </form>
@@ -58,11 +58,11 @@
                     </div>
                         <% } else { %>
                             <div id="button">
-                            <button id="BUY">BUY</button>
+                            <button class="blk-btns-small" id="BUY">BUY</button>
                             </div>
                             <div id="comment-section">
-                            <h3 id="comments">Comments</h3>
-                            <h4 style="color: red">Log in to leave a comment</h4>
+                            <h4 id="comments">Comments</h4>
+                            <h5 id="log-in-to-comment" style="color: red">Log in or sign up to post a comment</h5>
                             <% if (item.comments.length > 0) { %> 
                                 <%  item.comments.forEach(function(c) { %>
                                     <p><strong><%= c.userName.replace(/\s+/g, '') %></strong> <%= c.content %></p>

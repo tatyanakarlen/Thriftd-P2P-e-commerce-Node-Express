@@ -34,6 +34,10 @@ router.post('/:id', userCtrl.addToWishList) // this will add item to wishlist
 // removeFromWishList 
 router.delete('/:id/wish-list-delete', productsCtrl.deleteFromWishList)
 
+// buyItem
+router.get('/:id/buy', productsCtrl.buy)
+router.post('/:id/order', productsCtrl.order)
+
 
 
 

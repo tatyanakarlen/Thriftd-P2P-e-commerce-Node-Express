@@ -12,7 +12,9 @@ module.exports = {
   edit, 
   update, 
   deleteItem, 
-  deleteFromWishList
+  deleteFromWishList, 
+  buy,
+  order
 };
 
 
@@ -142,6 +144,26 @@ async function deleteFromWishList (req, res) {
   await user.save()
   res.redirect('/users/' + req.user.id + '/myItems')
 }
+
+async function buy (req,res) {
+  let user = await User.findById(req.user)
+  res.render('products/buy-form.ejs', {
+    user
+  })
+}
+
+async function order (req,res) {
+  let user = await User.findById(req.user)
+  res.render('products/order-placed.ejs')
+}
+
+
+
+// buyItem
+// router.get('/:id/buy', productsCtrl.buy)
+// router.post('/:id/order', productsCtrl.order)
+
+
 
 // let wishListItem = await User.find({
 //   _id:req.user.id

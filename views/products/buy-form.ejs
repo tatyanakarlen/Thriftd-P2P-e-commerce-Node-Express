@@ -1,0 +1,54 @@
+<%-include('../partials/header') %>
+
+<div class="new-post-form-container">
+    <h2 class="NEW-POST-H2">Add new shipping information</h2>
+    <form id="buy-form" class="form" action="/products/:id/order" method="POST">
+        <label><strong>First and last name</strong><br>
+            <input type="text" name="name" placeholder="First name last name"></input>
+        </label>
+        <label><strong>Address line 1:</strong><br>
+            <input type="text" name="Address1" placeholder="123 Any Street"></input>
+        </label>
+        <label><strong>Address line 2:</strong><br>
+            <input type="text" name="Address2" placeholder="Optional"></input>
+        </label>
+        <label><strong>City:</strong><br>
+            <input type="text" name="City" placeholder="Any City"></input>
+        </label>
+        <label><strong>Zip Code:</strong><br>
+            <input type="text" name="ZipCode" placeholder="XXX XXX"></input>
+        </label>
+        <label><strong>Country:</strong><br>
+            <input type="text" name="Country" placeholder="Any Country"></input>
+        </label>
+        <label><strong>E-mail:</strong><br>
+            <input type="text" name="email" placeholder="email"></input>
+        </label>
+           <label><strong>Payment Type:</strong>
+                <select name="payment" required>
+                    <option value="PayPal">PayPal</option>
+                    <option value="GooglePay">GooglePay</option>
+                    <option value="ApplePay">ApplePay</option>
+                    <option value="Visa">Visa</option>
+                    <option value="Mastercard">Mastercard</option>
+                    <option value="AMEX">AMEX</option>
+                </select>
+            </label>
+        <label><strong>Credit Card Number:</strong>
+            <input type="text" name="ccnumber" placeholder="Enter number">
+        </label>
+        <label><strong>Expiry Date:</strong>
+            <input class="small input" type="text" name="expirydate" placeholder="XX/XX">
+        </label>
+        <label><strong>Security Code:</strong>
+            <input class="small input" type="text" name="securitycode" placeholder="XXX">
+        </label>
+            <button id="place-order-btn" class="blk-btns-small" type="submit">Place Order</button>
+    </form>
+</div>
+
+
+
+
+
+<%-include('../partials/footer') %>

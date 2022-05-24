@@ -1,5 +1,6 @@
 html {
     height: 100%; 
+    box-sizing: border-box;
   }
   
   body {
@@ -161,8 +162,8 @@ html {
       margin-top: 1rem; 
       flex-wrap: wrap;
       margin: auto;
-width: 90%;
-padding: 10px;
+      width: 90%;
+      padding: 10px;
   }
   
 
@@ -183,6 +184,8 @@ padding: 10px;
     background-color: transparent;
     cursor: pointer; 
     border: none; 
+    color: red; 
+    font-size: 20px; 
   }
 
   .product-boxes > form {
