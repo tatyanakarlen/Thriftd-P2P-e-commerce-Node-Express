@@ -9,20 +9,20 @@
             <ul class="show-page-UL">
                 <li>
                     <h3 id="item-title"><strong><%=item.title %></strong></h3>
-                <li>
-                    <li><%=item.description %></li>
                 </li>
-                <li><strong>Size:</strong> <%=item.size %>
+                    <li><h4 id="item-description"><%=item.description %></h4></li>
                 </li>
-                <li><strong>Price:</strong> $<%=item.price %>
+                <li class="li-small"><strong>Size:</strong> <%=item.size %>
                 </li>
-                <li><strong>Brand:</strong> <%=item.brand %>
+                <li class="li-small" ><strong>Price:</strong> $<%=item.price %>
                 </li>
-                <li><strong>Color:</strong> <%=item.color %>
+                <li class="li-small"><strong>Brand:</strong> <%=item.brand %>
                 </li>
-                <li><strong>Shipping:</strong> $<%=item.shipping %>
+                <li class="li-small"><strong>Color:</strong> <%=item.color %>
                 </li>
-                <li><strong>Posted By: <a href="/users/<%=item.postedById%>"><%=item.userName.replace(/\s+/g, '')%></strong></a>
+                <li class="li-small"><strong>Shipping:</strong> $<%=item.shipping %>
+                </li>
+                <li class="li-small"><strong>Posted By: <a href="/users/<%=item.postedById%>"><%=item.userName.replace(/\s+/g, '')%></strong></a>
                 </li>
             </ul>
             <% if (user) { %>
@@ -62,7 +62,7 @@
                             </div>
                             <div id="comment-section">
                             <h4 class="roboto">Comments</h4>
-                            <h5 id="log-in-to-comment" style="color: red">You must be loggied in to post a comment</h5>
+                            <h5 id="log-in-to-comment" style="color: red">You must be logged in to post a comment</h5>
                             <% if (item.comments.length > 0) { %> 
                                 <%  item.comments.forEach(function(c) { %>
                                     <p class="comments"><strong><%= c.userName.replace(/\s+/g, '') %></strong> <%= c.content %></p>

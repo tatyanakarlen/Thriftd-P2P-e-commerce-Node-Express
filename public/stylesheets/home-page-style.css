@@ -170,7 +170,7 @@ html {
     justify-content: center;
     height: 400px; 
     width: 50%; 
-    padding-right: 5rem; 
+    padding-right: 6.5rem; 
   }
 
  
@@ -363,6 +363,13 @@ html {
 
 #item-title {
   font-weight: bold;
+  /* padding-bottom: -4rem;  */
+  margin-top: 3rem; 
+}
+
+#item-description {
+  margin-bottom: 2rem;  
+  padding-top: -3rem; 
 }
 
 .comment-box {
@@ -575,6 +582,14 @@ html {
   display: flex; 
   width: 50%; 
   
+}
+
+#index-text {
+  font-size: 14px; 
+}
+
+.li-small {
+  font-size: 14px; 
 }
     
 
