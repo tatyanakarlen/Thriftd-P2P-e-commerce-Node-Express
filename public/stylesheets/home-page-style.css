@@ -19,7 +19,6 @@
 html {
     min-height: 100%; 
     box-sizing: border-box;
-    padding: 40px; 
   }
   
   body {
@@ -485,6 +484,7 @@ html {
     flex-direction: row;
     margin-top: 2rem;
     gap: 1rem; 
+    padding-left: 3.25rem
   }
 
   .avatar {
@@ -504,7 +504,7 @@ html {
   #avatarIMG {
     display: flex;
     align-self:center; 
-    padding-left: 3.5rem;
+    /* padding-left: 3.5rem; */
   }
 
   #user-info-P {
