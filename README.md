@@ -17,6 +17,13 @@ Shoppers can view product details and perform operations:
 
 ![clone](https://imgur.com/6BrGDP4.png)
 
+## User's profile/dashboard:
+
+Every user has a profile/dashboard where they can view items in their wish-list and their own posted products. For a posted product the owner/user can perform CRUD operations (post, update and delete) on their own posts.  
+
+![clone](https://imgur.com/h7e8B6u.png)
+
+
 
 
 
