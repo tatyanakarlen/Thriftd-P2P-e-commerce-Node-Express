@@ -29,6 +29,27 @@ A registered user can post any fashion-item product for sale, and upload photos.
 
 ![clone](https://imgur.com/En5Bdbu.png)
 
+## Technologies used:
+<br>
+
+1. Javascript
+
+2. HTML/CSS
+
+3. Node.JS
+
+4. Express
+
+5. MongoDB
+
+6. Imgur photo-upload API
+
+
+<br>
+<br>
+<br>
+<br>
+
 
 
 
