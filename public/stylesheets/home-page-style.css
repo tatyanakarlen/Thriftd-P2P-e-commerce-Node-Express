@@ -548,6 +548,7 @@ html {
     .roboto-bold {
       font-family: 'Roboto', sans-serif;
       font-weight: bold;
+      font-size: 25px;
     }
 
     .arial-small {
@@ -591,7 +592,7 @@ html {
 }
 
 #index-text {
-  font-size: 14px; 
+  font-size: 18px; 
 }
 
 .li-small {
