@@ -23,6 +23,14 @@ Every user has a profile/dashboard where they can view items in their wish-list 
 
 ![clone](https://imgur.com/h7e8B6u.png)
 
+## Posting a product for sale:
+
+A registered user can post any fashion-item product for sale, and upload photos.
+
+![clone](https://imgur.com/En5Bdbu.png)
+
+
+
 
 
 
